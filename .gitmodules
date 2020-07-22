@@ -7,3 +7,6 @@
 [submodule ".local/share/vifm_devicons"]
 	path = .local/share/vifm_devicons
 	url = https://github.com/cirala/vifm_devicons.git
+[submodule ".local/share/neep-font"]
+	path = .local/share/neep-font
+	url = https://github.com/nikolas/jmk-x11-fonts.git
