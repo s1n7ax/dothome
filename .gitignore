@@ -25,6 +25,9 @@
 !.config/polybar
 !.config/polybar/**
 
+!.config/picom
+!.config/picomk/**
+
 
 #------------------------------------------------------------------------------#
 #                                      DWM                                     #
@@ -62,6 +65,10 @@
 !.local/share/nvim/site
 !.local/share/nvim/site/**
 
+!.local/share/neep-font
+!.local/share/neep-font/*
+!.local/share/neep-font/*/**
+
 !.local/share/vifm_devicons
 
 #------------------------------------------------------------------------------#
@@ -78,3 +85,10 @@
 !.xinitrc
 !.Xresources
 !.zshrc
+
+
+#------------------------------------------------------------------------------#
+#                                    COMMON                                    #
+#------------------------------------------------------------------------------#
+*/**/__pycache__
+*/**/node_modules
