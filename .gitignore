@@ -28,6 +28,9 @@
 !.config/picom
 !.config/picomk/**
 
+!.config/awesome
+!.config/awesome/**
+
 
 #------------------------------------------------------------------------------#
 #                                      DWM                                     #
