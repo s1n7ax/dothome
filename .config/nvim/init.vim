@@ -477,6 +477,11 @@ nnoremap <space>r :so $MYVIMRC<cr>
 " open terminal
 nnoremap <Leader>tv :vsp<CR>:terminal<CR>i
 nnoremap <Leader>th :sp<CR>10<C-w>_:terminal<CR>i
+
+" remove & change the word under the cursor
+nnoremap c* *Ncgn
+nnoremap d* *Ndgn
+
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "                                 KEY BINDS END                                "
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
