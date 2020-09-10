@@ -473,6 +473,10 @@ nnoremap <space>e :vsp $MYVIMRC<cr>
 
 " reload the .vimrc
 nnoremap <space>r :so $MYVIMRC<cr>
+
+" open terminal
+nnoremap <Leader>tv :vsp<CR>:terminal<CR>i
+nnoremap <Leader>th :sp<CR>10<C-w>_:terminal<CR>i
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "                                 KEY BINDS END                                "
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
