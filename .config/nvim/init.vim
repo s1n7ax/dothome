@@ -376,6 +376,8 @@ set scrolloff=10
 " turn off status line
 set laststatus=0
 
+" clipboard copy and paste
+set clipboard=unnamedplus
 
 " replace yanked word
 " binds: cpw, cpi(
