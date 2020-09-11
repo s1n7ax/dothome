@@ -326,7 +326,40 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+	-- Tags (q for tag #4)
+	awful.key({ modkey }, "q",
+		function (c)
+			local screen = awful.screen.focused()
+			local tag = screen.tags[4]
+			if tag then
+			   tag:view_only()
+			end
+		end,
+		{description = "view tag 4", group = "tag"}),
+
+	-- Tags (w for tag #5)
+	awful.key({ modkey }, "w",
+		function (c)
+			local screen = awful.screen.focused()
+			local tag = screen.tags[5]
+			if tag then
+			   tag:view_only()
+			end
+		end,
+		{description = "view tag 5", group = "tag"}),
+
+	-- Tags (e for tag #6)
+	awful.key({ modkey }, "e",
+		function (c)
+			local screen = awful.screen.focused()
+			local tag = screen.tags[6]
+			if tag then
+			   tag:view_only()
+			end
+		end,
+		{description = "view tag 6", group = "tag"})
 )
 
 clientkeys = gears.table.join(
