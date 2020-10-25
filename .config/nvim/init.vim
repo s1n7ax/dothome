@@ -457,6 +457,8 @@ set fillchars+=vert:\|
 " this is important for dev icons to work
 set encoding=UTF-8
 
+" allow windows to be closed while keeping the buffer
+set hidden
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "                               VIM DEFAULTS END                               "
