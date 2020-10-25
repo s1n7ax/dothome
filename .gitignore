@@ -9,6 +9,7 @@
 
 !.config/vifm
 !.config/vifm/**
+.config/vifm/vifminfo.json
 
 !.config/bspwm
 !.config/bspwm/**
