@@ -31,6 +31,16 @@
 !.config/awesome
 !.config/awesome/**
 
+!.config/picom
+!.config/picom/**
+
+!.config/mpv
+!.config/mpv/**
+
+!.config/systemd
+!.config/systemd/**
+
+
 
 #------------------------------------------------------------------------------#
 #                                      DWM                                     #
