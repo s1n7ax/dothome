@@ -508,6 +508,7 @@ nnoremap <Leader>vf va{V
 
 " switch to normal mode in terminal
 tnoremap <Esc> <C-\><C-n>
+tnoremap jk <C-\><C-n>
 
 " open vimrc
 nnoremap <space>e :vsp $MYVIMRC<cr>
