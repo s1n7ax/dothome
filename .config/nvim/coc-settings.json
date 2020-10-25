@@ -46,10 +46,10 @@
 		"python"
 	],
 	"coc.preferences.snippets.enable": true,
-	"diagnostic.messageTarget": "echo",
+	"diagnostic.messageTarget": "float",
 	"suggest.floatEnable": false,
 	"signature.target": "echo",
-	"coc.preferences.hoverTarget": "echo"
+	"coc.preferences.hoverTarget": "echo",
 	"java.home": "/usr/lib/jvm/default-runtime",
 	"java.import.gradle.enabled": true,
 	"java.import.gradle.wrapper.enabled": true
