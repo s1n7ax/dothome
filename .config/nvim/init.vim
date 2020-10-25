@@ -22,6 +22,8 @@ let g:coc_global_extensions = [
 	\ 'coc-tslint-plugin', 
 	\ 'coc-tsserver', 
 	\ 'coc-python', 
+	\ 'coc-java',
+	\ 'coc-xml',
 	\ 'coc-emmet', 
 	\ 'coc-css',
 	\ 'coc-html',
@@ -31,8 +33,13 @@ let g:coc_global_extensions = [
 	\ 'coc-git',
 	\ 'coc-highlight',
 	\ 'coc-markdownlint',
-	\ 'coc-python'
+	\ 'coc-python',
+	\ 'coc-lua',
+	\ 'coc-snippets'
 \]
+
+" adds the status line when something is being processed in the background
+let g:airline#extensions#coc#enabled = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -129,6 +136,37 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand-jump)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-;> <Plug>(coc-snippets-expand)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 "------------------------------------------------------------------------------"
 "                                vim javascript                                "
