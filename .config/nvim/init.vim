@@ -352,6 +352,9 @@ Plug 'unblevable/quick-scope'
 "------------------------------------------------------------------------------"
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
+g:colorscheme_switcher_define_mappings=0
+nnoremap <F8> :NextColorScheme<Cr>
+nnoremap <F7> :PrevColorScheme<Cr>
 let g:colorscheme_switcher_keep_background=1
 
 Plug 'rafi/awesome-vim-colorschemes'
@@ -383,7 +386,7 @@ call plug#end()
 "                              VIM DEFAULTS START                              "
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 " color theme
-colorscheme OceanicNext
+colorscheme sonokai
 set background=dark
 
 set number
