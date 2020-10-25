@@ -1,0 +1,10 @@
+[Unit]
+Description=GoogleDriveSync
+After=network.target
+
+[Service]
+ExecStart= rclone --stats 10s move -v "gdrive" "googledriverclone:"
+Restart=always
+
+[Install]
+WantedBy=suspend.target
