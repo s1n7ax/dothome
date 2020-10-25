@@ -196,26 +196,26 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+	-- s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+    -- s.mywibox:setup {
+    --     layout = wibox.layout.align.horizontal,
+    --     { -- Left widgets
+    --         layout = wibox.layout.fixed.horizontal,
+    --         mylauncher,
+    --         s.mytaglist,
+    --         s.mypromptbox,
+    --     },
+    --     s.mytasklist, -- Middle widget
+    --     { -- Right widgets
+    --         layout = wibox.layout.fixed.horizontal,
+    --         mykeyboardlayout,
+    --         wibox.widget.systray(),
+    --         mytextclock,
+    --         s.mylayoutbox,
+    --     },
+    -- }
 end)
 -- }}}
 
@@ -456,6 +456,7 @@ for i = 1, 9 do
     )
 end
 
+
 clientbuttons = gears.table.join(
 	awful.button({ }, 1, function (c)
 		c:emit_signal("request::activate", "mouse_click", {raise = true})
@@ -490,6 +491,16 @@ awful.rules.rules = {
      }
     },
 
+	-- No border
+    { rule_any = {
+        class = { "Polybar"}
+      	}, properties = { 
+			border_width = 0,
+  	 	}
+	},
+	--
+	--
+	--
     -- Floating clients.
     { rule_any = {
         instance = {
@@ -503,7 +514,6 @@ awful.rules.rules = {
           "Gpick",
           "Kruler",
           "MessageWin",  -- kalarm.
-          "Sxiv",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
@@ -521,14 +531,14 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
-    },
+	-- Add titlebars to normal clients and dialogs
+	-- { rule_any = {type = { "normal", "dialog" }
+	--     }, properties = { titlebars_enabled = true }
+	-- },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+	-- Set Firefox to always map on the tag named "2" on screen 1.
+	{ rule = { role = "browser" },
+	  properties = { screen = 1, tag = "3" } },
 }
 -- }}}
 
@@ -588,10 +598,18 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
-end)
+-- This enables the fucus on mouse hover
+-- client.connect_signal("mouse::enter", function(c)
+--     c:emit_signal("request::activate", "mouse_enter", {raise = false})
+-- end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+
+-- gaps
+beautiful.useless_gap = 10
+
+-- autostart
+awful.spawn.with_shell(".local/share/s1n7ax/init/startup.py")
