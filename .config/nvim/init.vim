@@ -18,25 +18,8 @@ Plug 'roxma/nvim-yarp'
 "                                   coc nvim                                   "
 "------------------------------------------------------------------------------"
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = [
-	\ 'coc-tslint-plugin', 
-	\ 'coc-tsserver', 
-	\ 'coc-python', 
-	\ 'coc-java',
-	\ 'coc-xml',
-	\ 'coc-emmet', 
-	\ 'coc-css',
-	\ 'coc-html',
-	\ 'coc-json',
-	\ 'coc-yank',
-	\ 'coc-prettier',
-	\ 'coc-git',
-	\ 'coc-highlight',
-	\ 'coc-markdownlint',
-	\ 'coc-python',
-	\ 'coc-lua',
-	\ 'coc-snippets'
-\]
+:luafile config/coc-extensions.lua
+
 
 " adds the status line when something is being processed in the background
 let g:airline#extensions#coc#enabled = 1
