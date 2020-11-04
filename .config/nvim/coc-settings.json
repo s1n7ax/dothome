@@ -35,16 +35,7 @@
 	"prettier.stylelintIntegration": true,
 	"prettier.statusItemText": "Prettier",
 
-	"coc.preferences.formatOnSaveFiletypes": [
-		"typescriptreact",
-		"typescript",
-		"javascript",
-		"js",
-		"java",
-		"json",
-		"html",
-		"python"
-	],
+	"coc.preferences.formatOnSaveFiletypes": ["*"],
 	"coc.preferences.snippets.enable": true,
 	"diagnostic.messageTarget": "float",
 	"suggest.floatEnable": false,
