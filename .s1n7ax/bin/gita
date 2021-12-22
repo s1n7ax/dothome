@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export COMMAND=$1
+export CD=$(pwd)
+
+function run () {
+	cd "$CD"
+	cd "$1"
+	echo "Running '$COMMAND' on '$(pwd)'"
+	eval "$COMMAND"
+}
+
+export -f run
+
+find ./* -name ".git" -type d,f | xargs -I {} dirname {} | xargs -I {} bash -c 'run "{}"'
+

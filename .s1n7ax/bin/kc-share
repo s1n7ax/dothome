@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+kdeconnect-cli --name $(kdeconnect-cli -a --name-only | dmenu) --share "$1"
+
+
