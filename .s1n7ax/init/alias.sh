@@ -8,9 +8,14 @@ alias f="vifmrun"
 alias n="nvim"
 alias p="sudo pacman -Sy && sudo pacman -S"
 alias pl="pacman -Ql"
-alias l="lazygit"
-alias d="lazydocker"
-alias conf="git --git-dir=$HOME/Workspace/dothome --work-tree=$HOME"
+alias lg="lazygit"
+alias ld="lazydocker"
+
+# pacman stuff
+alias p="sudo pacman -S --needed"
+alias pu="sudo pacman -Syu"
+alias pr="sudo pacman -Sy"
+alias pl="pacman -Ql"
 
 
 #------------------------------------------------------------------------------#
