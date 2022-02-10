@@ -3,3 +3,5 @@
 	name = s1n7ax
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
