@@ -351,6 +351,14 @@ filextype *.pro qtcreator %f &
 filextype */
         \ {View in thunar}
         \ Thunar %f &,
+        \ {Share via KDEConnect}
+        \ ls %f | xargs -I{} kdeconnect-cli --share=%d/%f/{} -n=$(kdeconnect-cli -a --name-only | dmenu),
+        \ {Print}
+        \ echo %d/%f
+
+filextype *.*
+        \ {Share via KDEConnect}
+        \ kdeconnect-cli -a --name-only | dmenu | xargs -I{} kdeconnect-cli -n="{}" --share %f
 
 " Syntax highlighting in preview
 "
