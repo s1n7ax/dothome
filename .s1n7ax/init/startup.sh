@@ -3,9 +3,9 @@ wal -R
 st &
 st &
 flatpak run com.github.Eloston.UngoogledChromium &
-flatpak run org.mozilla.firefox &
+# flatpak run org.mozilla.firefox &
 flatpak run com.transmissionbt.Transmission &
-flatpak run com.spotify.Client &
+# flatpak run com.spotify.Client &
 dolphin &
 pavucontrol &
 /usr/lib/kdeconnectd &
