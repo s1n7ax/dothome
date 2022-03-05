@@ -105,3 +105,4 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.s1n7ax/init/term-env.sh
 source ~/.s1n7ax/init/alias.sh
+rxfetch
