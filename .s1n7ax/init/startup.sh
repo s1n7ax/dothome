@@ -9,7 +9,8 @@ flatpak run com.transmissionbt.Transmission &
 dolphin &
 pavucontrol &
 /usr/lib/kdeconnectd &
-xsetroot -name "  $(whoami)  "
 
 # prevent screen from turning off
 xset s off -dpms
+picom &
+xsetroot -name "  $(whoami)  "
