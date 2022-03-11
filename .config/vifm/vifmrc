@@ -274,6 +274,8 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
         \<application/zip,application/java-archive>
        \ {Mount with fuse-zip}
        \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
+       \ {Unzip to directory}
+       \ unzip %f -d %f:r,
        \ {View contents}
        \ zip -sf %c | less,
        \ {Extract here}
@@ -554,10 +556,12 @@ fileviewer {*.docx},
 nnoremap n j
 vnoremap n j
 nnoremap N J
+mnoremap n j
 
 nnoremap e k
 vnoremap e k
 nnoremap E K
+mnoremap e k
 
 nnoremap i l
 vnoremap i l
