@@ -11,3 +11,8 @@ export TERM=st
 
 # need this for idea IDE to work correctly on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Davinci Resolve
+# To enable compatibility with high-resolution displays, set the following environment variables accordingly
+export QT_DEVICE_PIXEL_RATIO=2
+export QT_AUTO_SCREEN_SCALE_FACTOR=true
