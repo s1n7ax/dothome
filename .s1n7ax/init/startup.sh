@@ -1,16 +1,16 @@
 cd
 wal -R
 st &
-st &
-flatpak run com.github.Eloston.UngoogledChromium &
-# flatpak run org.mozilla.firefox &
-flatpak run com.transmissionbt.Transmission &
-# flatpak run com.spotify.Client &
+chromium &
+transmission-qt &
 dolphin &
 pavucontrol &
 /usr/lib/kdeconnectd &
 
+flatpak run com.spotify.Client &
+flatpak run com.valvesoftware.Steam &
+
 # prevent screen from turning off
-xset s off -dpms
 picom &
 xsetroot -name "  $(whoami)  "
+xset s off -dpms
