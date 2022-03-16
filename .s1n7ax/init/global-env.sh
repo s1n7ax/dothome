@@ -16,3 +16,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # To enable compatibility with high-resolution displays, set the following environment variables accordingly
 export QT_DEVICE_PIXEL_RATIO=1.5
 export QT_AUTO_SCREEN_SCALE_FACTOR=true
+
+# mangohud overlay
+MANGOHUD_CONFIGFILE=~/.config/MangoHud/MangoHud.conf
