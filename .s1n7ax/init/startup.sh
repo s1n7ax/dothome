@@ -1,14 +1,14 @@
 cd
 wal -R
-st &
+st || alacritty &
 chromium &
-transmission-qt &
-dolphin &
+transmission-qt || transmission-gtk &
+dolphin || thunar || nautilus &
 pavucontrol &
 /usr/lib/kdeconnectd &
 
 flatpak run com.spotify.Client &
-flatpak run com.valvesoftware.Steam &
+steam || flatpak run com.valvesoftware.Steam &
 
 # prevent screen from turning off
 picom &
