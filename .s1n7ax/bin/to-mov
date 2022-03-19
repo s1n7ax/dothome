@@ -1,0 +1,52 @@
+#!/bin/env python3
+
+"""
+This takes video files in the current directory and convert them to mov file
+Script takes 5 files at a time convert them. Then takes the next 5 files and
+continue the process
+"""
+
+import os
+import pathlib
+from subprocess import Popen
+from itertools import zip_longest
+
+valid_extensions = ['.flv', '.mp4']
+
+
+def is_video_file(file_name):
+    return pathlib.Path(file_name).suffix in valid_extensions
+
+
+def has_no_mov(file_name):
+    mov_name = pathlib.Path(file_name).stem + ".mov"
+    return not os.path.isfile(mov_name)
+
+
+def get_filename_base(file_name):
+    return pathlib.Path(file_name).stem
+
+
+files = [f for f in os.listdir('.') if (
+    os.path.isfile(f) and is_video_file(f) and has_no_mov(f))]
+
+commands = []
+
+
+for file in files:
+    commands.append(["ffmpeg", "-i", file, "-c:v", "dnxhd", "-profile:v",
+                     "dnxhr_hq", "-pix_fmt", "yuv422p", "-c:a", "pcm_s16le", "-f", "mov",
+                     get_filename_base(file) + ".mov"])
+
+
+def grouper(iterable, n, fillvalue=None):
+    "Collect data into fixed-length chunks or blocks"
+    args = [iter(iterable)] * n
+    return zip_longest(*args, fillvalue=fillvalue)
+
+# take only 5 items at a time and convert
+for command_group in grouper(commands, 5):
+    procs  = [Popen(command) for command in command_group]
+
+    for proc in procs:
+        proc.wait()
