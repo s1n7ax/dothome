@@ -54,6 +54,8 @@ let-env NU_PLUGIN_DIRS = [
     ($nu.config-path | path dirname | path join 'plugins')
 ]
 
+let-env XDG_DATA_DIRS = "/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/"
+
 module completions {
   # Custom completions for external commands (those outside of Nushell)
   # Each completions has two parts: the form of the external command, including its flags and parameters
@@ -121,6 +123,18 @@ module completions {
     --push-option(-o): string                  # option to transmit
     --ipv4(-4)                                 # use IPv4 addresses only
     --ipv6(-6)                                 # use IPv6 addresses only
+  ]
+
+  def "nu-complete flatpak list" [] {
+    ^flatpak list --app --columns=application | lines | each { |line| $line | str trim }
+  }
+
+  export extern "flatpak run" [
+    apps?: string@"nu-complete flatpak list"
+  ]
+
+  export extern "flatpak update" [
+    apps?: string@"nu-complete flatpak list"
   ]
 }
 
