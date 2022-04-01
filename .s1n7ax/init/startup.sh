@@ -8,9 +8,10 @@ pavucontrol &
 /usr/lib/kdeconnectd &
 
 flatpak run com.spotify.Client &
-steam || flatpak run com.valvesoftware.Steam &
+flatpak run com.valvesoftware.Steam &
 
-# prevent screen from turning off
 picom &
 xsetroot -name "  $(whoami)  "
+
+# prevent screen from turning off
 xset s off -dpms

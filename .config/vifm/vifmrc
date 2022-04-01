@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=vim
+set vicmd=nvim
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -136,6 +136,7 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
+command! share kdeconnect-share %f
 
 " ------------------------------------------------------------------------------
 
@@ -166,7 +167,7 @@ command! reload :write | restart full
 " program.
 
 " Pdf
-filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
+filextype {*.pdf},<application/pdf> okular %f, zathura %c %i &, apvlv %c, xpdf %c
 
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
@@ -324,19 +325,6 @@ filetype *.tudu tudu -f %c
 
 " Qt projects
 filextype *.pro qtcreator %f &
-
-" Directories
-filextype */
-        \ {View in thunar}
-        \ Thunar %f &,
-        \ {Share via KDEConnect}
-        \ ls %f | xargs -I{} kdeconnect-cli --share=%d/%f/{} -n=$(kdeconnect-cli -a --name-only | dmenu),
-        \ {Print}
-        \ echo %d/%f
-
-filextype *.*
-        \ {Share via KDEConnect}
-        \ kdeconnect-cli -a --name-only | dmenu | xargs -I{} kdeconnect-cli -n="{}" --share %f
 
 " Syntax highlighting in preview
 "
