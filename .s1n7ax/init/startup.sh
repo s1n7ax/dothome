@@ -10,7 +10,6 @@ pavucontrol &
 flatpak run com.spotify.Client &
 flatpak run com.valvesoftware.Steam &
 
-picom &
 xsetroot -name "  $(whoami)  "
 
 # prevent screen from turning off
