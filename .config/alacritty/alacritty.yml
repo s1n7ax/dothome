@@ -1,3 +1,5 @@
+import:
+  - ~/.config/alacritty/keys.yml
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
