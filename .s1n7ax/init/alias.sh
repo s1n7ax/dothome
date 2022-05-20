@@ -10,6 +10,7 @@ alias p="sudo pacman -Sy && sudo pacman -S"
 alias pl="pacman -Ql"
 alias lg="lazygit"
 alias ld="lazydocker"
+alias yt="yt-dlp"
 
 # pacman stuff
 alias p="sudo pacman -S --needed"
@@ -17,6 +18,7 @@ alias pu="sudo pacman -Sy"
 alias puu="sudo pacman -Syu"
 alias pr="sudo pacman -Ru"
 alias pl="pacman -Ql"
+
 
 
 #------------------------------------------------------------------------------#
