@@ -1,0 +1,12 @@
+#!/bin/bash
+
+LOCATION=$1
+
+if [[ -d $LOCATION ]]; then
+    find "$LOCATION" -type f | xargs -I{} kdeconnect-cli --share={} -n=$(kdeconnect-cli -a --name-only | dmenu)
+elif [[ -f $LOCATION ]]; then
+    kdeconnect-cli --share="$LOCATION" -n=$(kdeconnect-cli -a --name-only | dmenu)
+else
+    echo "$LOCATION is not valid"
+    exit 1
+fi
