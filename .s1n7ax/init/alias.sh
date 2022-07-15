@@ -19,6 +19,8 @@ alias puu="sudo pacman -Syu"
 alias pr="sudo pacman -Ru"
 alias pl="pacman -Ql"
 
+# Other
+alias yt="yt-dlp"
 
 
 #------------------------------------------------------------------------------#
