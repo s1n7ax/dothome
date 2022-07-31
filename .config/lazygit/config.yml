@@ -17,10 +17,10 @@ keybinding:
     redo: '<c-r>'
     diffingMenu: 'M'
     filteringMenu: '<c-f>'
-    commitChanges: 'C'
-    commitChangesWithEditor: 'C'
   files:
     ignoreFile: 'I'
+    commitChanges: 'C'
+    commitChangesWithEditor: 'c'
   commits:
     moveDownCommit: '<c-e>'
     moveUpCommit: '<c-u>'
