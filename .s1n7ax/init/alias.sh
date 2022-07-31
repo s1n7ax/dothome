@@ -32,3 +32,4 @@ alias lvim="cd ~/.config/nvim && lazygit"
 alias evim="cd ~/.config/nvim && nvim"
 
 alias cdw="cd ~/Workspace"
+alias cdn="cd ~/Workspace/nvim/"
