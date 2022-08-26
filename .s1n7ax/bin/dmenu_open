@@ -1,0 +1,3 @@
+#!/bin/bash
+
+SHELL=/bin/bash dmenu_run
