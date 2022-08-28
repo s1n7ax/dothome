@@ -1,6 +1,7 @@
 # Nushell Config File
 
 source ~/.s1n7ax/nushell/completion/kubectl.nu
+source ~/.s1n7ax/nushell/alias.sh
 
 module completions {
   # Custom completions for external commands (those outside of Nushell)
