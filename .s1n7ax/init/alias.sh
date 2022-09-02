@@ -10,7 +10,6 @@ alias p="sudo pacman -Sy && sudo pacman -S"
 alias pl="pacman -Ql"
 alias lg="lazygit"
 alias ld="lazydocker"
-alias yt="yt-dlp"
 
 # pacman stuff
 alias p="sudo pacman -S --needed"
@@ -42,10 +41,10 @@ alias kds="kubectl delete service"
 #------------------------------------------------------------------------------#
 #                                   LOCATIONS                                  #
 #------------------------------------------------------------------------------#
-alias eloc="cd ~/.s1n7ax && nvim"
+alias el="cd ~/.s1n7ax && nvim"
 
-alias lvim="cd ~/.config/nvim && lazygit"
-alias evim="cd ~/.config/nvim && nvim"
+alias lv="cd ~/.config/nvim && lazygit"
+alias ev="cd ~/.config/nvim && nvim"
 
 alias cdw="cd ~/Workspace"
 alias cdn="cd ~/Workspace/nvim/"
