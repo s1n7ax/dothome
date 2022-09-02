@@ -1,7 +1,7 @@
 cd
 wal -R
 alacritty || st &
-chromium &
+flatpak run org.mozilla.firefox &
 transmission-qt || transmission-gtk &
 nautilus || dolphin || thunar &
 pavucontrol &
