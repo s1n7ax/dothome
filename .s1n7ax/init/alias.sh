@@ -22,6 +22,22 @@ alias pl="pacman -Ql"
 # Other
 alias yt="yt-dlp"
 
+#Kubernetes
+alias k="kubectl"
+alias ka="kubectl get all"
+alias kp="kubectl get pods"
+alias kr="kubectl get rs"
+alias kd="kubectl get deployments"
+alias ks="kubectl get services"
+
+alias kc="kubectl create -f"
+
+alias kdp="kubectl delete pod"
+alias kdr="kubectl delete rs"
+alias kdd="kubectl delete deployment"
+alias kds="kubectl delete service"
+
+
 
 #------------------------------------------------------------------------------#
 #                                   LOCATIONS                                  #
