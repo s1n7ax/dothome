@@ -36,10 +36,17 @@ alias kdr="kubectl delete rs"
 alias kdd="kubectl delete deployment"
 alias kds="kubectl delete service"
 
-alias kdcp="kubectl describe pod"
-alias kdcr="kubectl describe rs"
-alias kdcd="kubectl describe deployment"
-alias kdcs="kubectl describe service"
+alias kdsp="kubectl describe pod"
+alias kdsr="kubectl describe rs"
+alias kdsd="kubectl describe deployment"
+alias kdss="kubectl describe service"
+
+# Docker compose
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcb="docker-compose build"
+alias dcrm="docker-compose rm"
+alias dci="docker-compose images"
 
 #------------------------------------------------------------------------------#
 #                                   LOCATIONS                                  #
