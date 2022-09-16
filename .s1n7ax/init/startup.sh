@@ -1,10 +1,11 @@
 cd
 wal -R
 alacritty || st &
-flatpak run org.mozilla.firefox &
+chromium &
 transmission-qt || transmission-gtk &
 nautilus || dolphin || thunar &
 pavucontrol &
+easyeffects &
 /usr/lib/kdeconnectd &
 
 # flatpak run com.spotify.Client &
