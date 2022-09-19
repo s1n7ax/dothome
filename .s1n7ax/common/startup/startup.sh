@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 cd
 wal -R
 alacritty || st &

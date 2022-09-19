@@ -6,6 +6,6 @@ include () {
 
 for profile in ~/.profiles/*(.N); do
     for file in ~/.s1n7ax/$profile:t/startup/*(.N); do
-        include $file
+        exec $file
     done
 done
