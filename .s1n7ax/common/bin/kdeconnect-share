@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-source ~/.s1n7ax/nushell/utils/file.nu
+source ~/.s1n7ax/common/nushell/utils/file.nu
 
 use file_util get-files-from-paths
 

@@ -1,0 +1,11 @@
+#!/bin/env zsh
+
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
+for profile in ~/.profiles/*(.N); do
+    for file in ~/.s1n7ax/$profile:t/env(.N)/local(.N)/*(.N); do
+        include $file
+    done
+done

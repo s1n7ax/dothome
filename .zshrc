@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.s1n7ax/init/term-env.sh
-source ~/.s1n7ax/init/alias.sh
+source ~/.s1n7ax/init_local_env
+source ~/.s1n7ax/init_alias
+
 rxfetch

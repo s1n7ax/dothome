@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcb="docker-compose build"
+alias dcrm="docker-compose rm"
+alias dci="docker-compose images"
