@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-alias ev="cd ~/.s1n7ax && nvim"
+alias el="cd ~/.s1n7ax && nvim"
 
 alias lv="cd ~/.config/nvim && lazygit"
 alias ev="cd ~/.config/nvim && nvim"
