@@ -54,12 +54,11 @@ def read_bookmarks(path: str):
 def main(args):
     create_config_if_not_exists(args.config)
 
-    match args.subparser_name:
-        case 'save':
-            write_bookmark(args.config, args.value)
+    if args.subparser_name == 'save':
+        write_bookmark(args.config, args.value)
 
-        case 'list':
-            read_bookmarks(args.config)
+    if args.subparser_name == 'list':
+        read_bookmarks(args.config)
 
 
 if __name__ == "__main__":
