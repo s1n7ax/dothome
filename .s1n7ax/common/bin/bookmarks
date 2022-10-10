@@ -48,7 +48,7 @@ def write_bookmark(path, value):
 
 def read_bookmarks(path: str):
     with open(path, 'r') as f:
-        print(f.read())
+        print(f.read().rstrip())
 
 
 def main(args):
