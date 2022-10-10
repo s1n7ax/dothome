@@ -1,6 +1,9 @@
 #!/bin/env bash
 
 alias d="docker"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dim="docker images"
 alias dc="docker compose"
 alias dcu="docker compose up -d"
 alias dcd="docker compose down"
