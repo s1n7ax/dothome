@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+alias dbs="dir-bookmarks save"
+alias dbo='cd $(dir-bookmarks list | fzf)'

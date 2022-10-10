@@ -1,0 +1,66 @@
+#!/bin/env python
+
+import argparse
+import sys
+from pathlib import Path
+
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-c", "--config", dest="config",
+                    help="configuration path")
+
+sub_parsers = parser.add_subparsers(dest="subparser_name")
+
+# save
+save_parser = sub_parsers.add_parser('save', help="save bookmark")
+save_parser.add_argument("value", type=str, help="value to save as a bookmark")
+
+# list
+sub_parsers.add_parser('list', help="list all the bookmarks")
+
+args = parser.parse_args()
+
+
+def create_config_if_not_exists(path):
+    absolute_config_path = Path(path).expanduser().absolute()
+
+    if not absolute_config_path.parent.exists():
+        absolute_config_path.parent.mkdir(parents=True)
+
+    if not absolute_config_path.is_file():
+        absolute_config_path.touch()
+
+
+def write_bookmark(path, value):
+    value = args.value.replace('\n', '') + '\n'
+
+    with open(path, 'r') as f:
+        for line in f.readlines():
+            if (line == value):
+                print('value "{}" is already in the bookmark list'.format(
+                    value.replace('\n', '')), file=sys.stderr)
+                return
+
+    with open(path, 'a') as f:
+        f.write(value)
+
+
+def read_bookmarks(path: str):
+    with open(path, 'r') as f:
+        print(f.read())
+
+
+def main(args):
+    create_config_if_not_exists(args.config)
+
+    match args.subparser_name:
+        case 'save':
+            write_bookmark(args.config, args.value)
+
+        case 'list':
+            read_bookmarks(args.config)
+
+
+if __name__ == "__main__":
+    main(args)
