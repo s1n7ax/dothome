@@ -11,7 +11,7 @@ alias ld="lazydocker"
 alias p="sudo pacman -S --needed"
 alias pu="sudo pacman -Sy"
 alias puu="sudo pacman -Syu"
-alias pr="sudo pacman -Ru"
+alias pr="sudo pacman -Runsv"
 alias pl="pacman -Ql"
 
 # Other
