@@ -2,3 +2,4 @@
 
 alias dbs="dir-bookmarks save"
 alias dbo='cd $(dir-bookmarks list | fzf)'
+alias dbn='cd $(dir-bookmarks list | fzf) && nvim'
