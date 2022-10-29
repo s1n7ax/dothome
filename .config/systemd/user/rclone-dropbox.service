@@ -1,0 +1,12 @@
+[Unit]
+Description=Dropbox
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount Dropbox:/ ~/Dropbox
+ExecStop=/bin/fusermount -u ~/Dropbox
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
