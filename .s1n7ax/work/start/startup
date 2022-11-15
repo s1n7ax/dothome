@@ -3,6 +3,7 @@
 cd
 wal -R
 alacritty || st &
+idea &
 chromium &
 nautilus || dolphin || thunar &
 
