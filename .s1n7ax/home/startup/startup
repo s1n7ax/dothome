@@ -7,7 +7,6 @@ chromium &
 transmission-qt || transmission-gtk &
 nautilus || dolphin || thunar &
 pavucontrol &
-easyeffects &
 /usr/lib/kdeconnectd &
 
 xsetroot -name "  $(whoami)  "
