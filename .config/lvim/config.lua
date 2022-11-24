@@ -163,6 +163,25 @@ lvim.builtin.dap.active = true
 
 -- Additional Plugins
 lvim.plugins = {
+  -- spread & collapse blocks of code
+  {
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter' },
+    config = function()
+      require('treesj').setup({
+        use_default_keymaps = false,
+      })
+
+      require('which-key').register({
+        o = {
+          name = "Other",
+          s = { "<cmd>TSJToggle<cr>", "Toggle spread block" },
+        },
+      }, { prefix = "<leader>" })
+    end,
+  },
+
+  -- themes
   {
     "sam4llis/nvim-tundra",
   },
