@@ -4,8 +4,6 @@ alias f="vifmrun"
 alias n="nvim"
 alias p="sudo pacman -Sy && sudo pacman -S"
 alias pl="pacman -Ql"
-alias lg="lazygit"
-alias ld="lazydocker"
 alias v="lvim"
 
 # pacman stuff

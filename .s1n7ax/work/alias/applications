@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+# apt stuff
+alias p="sudo apt update && sudo apt install"
+alias pu="sudo apt update"
+alias puu="sudo apt update && sudo apt upgrade"
+alias pr="sudo apt remove"
+alias v="lvim"

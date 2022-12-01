@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+alias f="vifmrun"
+alias n="nvim"
+alias lg="lazygit"
+alias ld="lazydocker"
