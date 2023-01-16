@@ -551,6 +551,11 @@ vnoremap e k
 nnoremap E K
 mnoremap e k
 
+nnoremap m h
+vnoremap m h
+nnoremap M H
+mnoremap m h
+
 nnoremap i l
 vnoremap i l
 nnoremap I L
