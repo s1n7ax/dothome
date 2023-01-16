@@ -2,7 +2,7 @@ keybinding:
   universal:
     prevItem-alt: 'e'
     nextItem-alt: 'n'
-    prevBlock-alt: 'h'
+    prevBlock-alt: 'm'
     nextBlock-alt: 'i'
     nextMatch: '='
     prevMatch: '-'
