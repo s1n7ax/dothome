@@ -232,6 +232,11 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {Set as wallpaper}
         \ wal -i %f
 
+" Raw images
+filextype {*.cr2,*.cr3}
+		\ {View in gthumb}
+		\ gthumb %f
+
 " OpenRaster
 filextype *.ora
         \ {Edit in MyPaint}
