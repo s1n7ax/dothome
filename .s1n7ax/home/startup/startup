@@ -2,7 +2,7 @@
 
 cd
 wal -R
-alacritty || st &
+st || alacritty &
 chromium &
 transmission-qt || transmission-gtk &
 nautilus || dolphin || thunar &
