@@ -5,7 +5,7 @@ wal -R
 st || alacritty &
 chromium &
 transmission-qt || transmission-gtk &
-nautilus || dolphin || thunar &
+thunar || dolphin || nautilus &
 pavucontrol &
 /usr/lib/kdeconnectd &
 
