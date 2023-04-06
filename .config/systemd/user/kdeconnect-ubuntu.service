@@ -1,0 +1,12 @@
+[Unit]
+Description=Connect your computer to your smartphone or tablet
+
+[Service]
+ExecStart=/usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
+ExecStop=/usr/bin/kquitapp5 kdeconnectd
+BusName=org.kde.kdeconnect
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

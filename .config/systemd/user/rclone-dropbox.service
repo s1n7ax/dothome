@@ -4,7 +4,7 @@ Description=Dropbox
 [Service]
 Type=simple
 ExecStart=/usr/bin/rclone mount Dropbox:/ /home/s1n7ax/Dropbox
-ExecStop=/bin/fusermount -u /home/s1n7ax/Dropbox
+ExecStop=/usr/bin/umount /home/s1n7ax/Dropbox
 Restart=always
 RestartSec=10
 
