@@ -1,5 +1,0 @@
-#!/bin/env bash
-
-alias dbs="dir-bookmarks save"
-alias o='cd $(dir-bookmarks list | fzf)'
-alias on='cd $(dir-bookmarks list | fzf) && nvim'

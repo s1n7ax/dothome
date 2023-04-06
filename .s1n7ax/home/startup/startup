@@ -1,15 +1,15 @@
 #!/bin/env bash
 
-cd
-wal -R
-st || alacritty &
-chromium &
-transmission-qt || transmission-gtk &
-thunar || dolphin || nautilus &
-pavucontrol &
-/usr/lib/kdeconnectd &
+#cd
+#wal -R
+#st || alacritty &
+#chromium &
+#transmission-qt || transmission-gtk &
+#thunar || dolphin || nautilus &
+#pavucontrol &
+#/usr/lib/kdeconnectd &
 
-xsetroot -name "  $(whoami)  "
+#xsetroot -name "  $(whoami)  "
 
 # prevent screen from turning off
 xset s off -dpms

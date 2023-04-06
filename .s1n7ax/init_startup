@@ -1,11 +1,12 @@
-#!/bin/env zsh
+#!/bin/env bash
 
-include () {
-    [[ -f "$1" ]] && source "$1"
+include() {
+	[[ -f "$1" ]] && source "$1"
 }
 
-for profile in ~/.profiles/*(.N); do
-    for file in ~/.s1n7ax/$profile:t/startup/*(.N); do
-        $file
-    done
+for profile in ~/.profiles/*; do
+	profile_name=$(basename $profile)
+	for file in ~/.s1n7ax/$profile_name/startup/*; do
+		$file
+	done
 done

@@ -1,0 +1,3 @@
+#!/bin/env bash
+
+echo "$(fd -i -H -E '.local' -E '.cargo' -E '.password-store' -t d ^.git$ ~ -x 'echo' '{//}' | sk)"
