@@ -1,5 +1,22 @@
 #!/bin/env bash
 
-kdeconnect-cli --name $(kdeconnect-cli -a --name-only | dmenu) --share "$1"
+function find_files {
+	if [ -d "$1" ]; then
+		find $1 -type f
+	else
+		echo $1
+	fi
+}
 
+AVAILABLE=$(kdeconnect-cli --list-available --name-only)
+DEVICE_COUNT=$(echo "$AVAILABLE" | wc -w)
 
+if [ $DEVICE_COUNT -gt 1 ]; then
+	PICKED_DEVICE=$(echo "$AVAILABLE" | dmenu)
+else
+	PICKED_DEVICE=$AVAILABLE
+fi
+
+for path in "$@"; do
+	find_files $path | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
+done

@@ -1,5 +1,0 @@
-#!/bin/env bash
-
-kdeconnect-cli --name pixel --share "$1"
-
-

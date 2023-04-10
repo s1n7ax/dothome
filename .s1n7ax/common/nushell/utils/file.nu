@@ -18,7 +18,7 @@ module file_util {
       if (is-file $file) {
         $file
       } else if (is-dir $file) {
-        ((get-files-from-dir $file) | each { echo $in })
+        ((get-files-from-dir $file) | each { |in| echo $in })
       }
     } | flatten
   }
