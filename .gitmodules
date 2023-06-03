@@ -4,6 +4,3 @@
 [submodule ".zsh/zsh-syntax-highlighting"]
 	path = .zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "/home/s1n7ax/.config/lvim"]
-	path = .config/lvim
-	url = git@github.com:s1n7ax/dotlvim.git
