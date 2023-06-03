@@ -8,5 +8,5 @@ alias pr="sudo apt remove"
 
 alias f="vifmrun"
 alias n="nvim"
-alias lg="gitui"
+alias lg="lazygit"
 alias ld="lazydocker"
