@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+alias gst="git status"
+alias gp="git pull"
+alias gP="git push"
+alias gc="git commit -m"
+alias gch="git checkout"
+alias gb="git branch"
