@@ -1,3 +1,4 @@
 #!/bin/env bash
 
+export PATH=$PATH:~/.s1n7ax/home/bin
 export PATH=$PATH:~/.local/share/bob/nvim-bin
