@@ -1,8 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
 sudo modprobe v4l2loopback exclusive_caps=1 max_buffer=2
+
 gphoto2 \
 	--stdout \
 	--set-config viewfinder=1 \
