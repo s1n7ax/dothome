@@ -1,4 +1,5 @@
 #!/bin/env bash
 
+export PATH=$PATH:/usr/local/cuda-12.1/bin/nvcc
 export PATH=$PATH:~/.s1n7ax/home/bin
 export PATH=$PATH:~/.local/share/bob/nvim-bin
