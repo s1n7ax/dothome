@@ -105,9 +105,9 @@ source ~/.s1n7ax/init_alias
 
 eval "$(~/.cargo/bin/starship init zsh)"
 
-bindkey ^B backward-word
-bindkey ^W forward-word
-bindkey ^D delete-word
-bindkey ^H backward-delete-word
-bindkey ^F vi-find-next-char
+bindkey "^[b" backward-word
+bindkey "^[w" forward-word
+bindkey "^[d" delete-word
+bindkey "^[h" backward-delete-word
+#  bindkey ^F vi-find-next-char
 
