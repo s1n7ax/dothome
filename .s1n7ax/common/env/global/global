@@ -6,6 +6,7 @@ export PATH=$PATH:~/.yarn/bin
 export PATH=$PATH:~/.bun/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:~/.deno/bin
 
 export EDITOR=nvim
 export TERM=st

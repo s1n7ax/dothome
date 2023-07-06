@@ -2,8 +2,8 @@
 
 alias el="cd ~/.s1n7ax && nvim"
 
-alias lv="cd ~/.config/nvim && lazygit"
-alias ev="cd ~/.config/nvim && nvim"
+alias el="cd ~/.config/astronvim && lazygit"
+alias ev="cd ~/.config/astronvim && nvim"
 
 alias cdw="cd ~/Workspace"
 alias cdn="cd ~/Workspace/nvim/"

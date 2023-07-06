@@ -1,5 +1,6 @@
 #!/bin/env bash
 
+alias g="git"
 alias ga="git add"
 alias gst="git status"
 alias gp="git pull"
