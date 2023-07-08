@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+
+if [[ $# -eq 0 ]] ; then
+    echo 'Converting all the files in the current dir to mov'
+
+    ls *.mkv | \
+    xargs -I {} basename {} .mkv | \
+    xargs -I {} \
+    sh -c 'ffmpeg -i "{}.mkv" -vcodec mjpeg -q:v 2 -acodec pcm_s16be -q:a 0 -f mov "{}.mov"'
+
+    exit 0
+  else
+    echo 'Converting "$1" to mov'
+
+    ABSOLUTE_PATH=$(realpath "$1")
+    FILE_PATH_WITHOUT_EXT="${ABSOLUTE_PATH%%.*}"
+    TARGET_PATH="$FILE_PATH_WITHOUT_EXT.mov"
+
+    exit 0
+fi
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+if [[ $# -eq 0 ]] ; then
+    echo 'Video file path should be passed to the command'
+    exit 0
+fi
+
+ABSOLUTE_PATH=$(realpath "$1")
+FILE_PATH_WITHOUT_EXT="${ABSOLUTE_PATH%%.*}"
+
+TARGET_FILE="$FILE_PATH_WITHOUT_EXT.mp4"
+
+ffmpeg -i "$ABSOLUTE_PATH" -qscale 0 "$TARGET_FILE"
