@@ -1,5 +1,12 @@
 #!/bin/env bash
 
+set -euxo pipefail
+
+if [[ $# -eq 0 ]] ; then
+	echo 'Path to share should be passed'
+	exit 1
+fi
+
 function find_files {
 	if [ -d "$1" ]; then
 		find $1 -type f
@@ -9,7 +16,7 @@ function find_files {
 }
 
 AVAILABLE=$(kdeconnect-cli --list-available --name-only)
-DEVICE_COUNT=$(echo "$AVAILABLE" | wc -w)
+DEVICE_COUNT=$(echo "$AVAILABLE" | wc -l)
 
 if [ $DEVICE_COUNT -gt 1 ]; then
 	PICKED_DEVICE=$(echo "$AVAILABLE" | dmenu)
@@ -18,5 +25,5 @@ else
 fi
 
 for path in "$@"; do
-	find_files $path | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
+	find_files "$path" | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
 done
