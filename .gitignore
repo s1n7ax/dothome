@@ -4,3 +4,4 @@
 .fonts/**/.uuid
 .gnupg
 .password-store
+.config/nushell/history.txt
