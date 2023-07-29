@@ -22,5 +22,11 @@ run com.github.Eloston.UngoogledChromium &
 
 run org.kde.dolphin &
 
+picom --experimental-backends &
+
 # prevent screen from turning off
-xset s off -dpms
+run xset s off -dpms &
+
+xset r rate 190 100 &
+
+~/.fehbg &
