@@ -1,6 +1,18 @@
 #!/bin/env bash
 
-fd -I -i -H -E '.local' -E '.cargo' -E '.password-store' -t d ^.git$ ~ -x 'echo' '{//}' | sk
+quick_exit ()
+{
+  read VAR
+  if [ ! -z "${VAR}" ]; then
+    echo $VAR
+    PID=$$
+    kill $PID 2&> /dev/null
+  fi
+}
 
-
-# echo "$(fd -I -i -H -E '.local' -E '.cargo' -E '.password-store' -t d ^.git$ ~ -x 'echo' '{//}' | sk)"
+fd -I -i -H \
+  -E '.local' \
+  -E '.cargo' \
+  -E '.password-store' \
+  -t d ^.git$ ~ \
+  -x 'echo' '{//}' | sk | quick_exit
