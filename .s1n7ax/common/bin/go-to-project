@@ -11,8 +11,5 @@ quick_exit ()
 }
 
 fd -I -i -H \
-  -E '.local' \
-  -E '.cargo' \
-  -E '.password-store' \
-  -t d ^.git$ ~ \
+  -t d ^.git$ ~/.config ~/Workspace \
   -x 'echo' '{//}' | sk | quick_exit
