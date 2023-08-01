@@ -7,10 +7,12 @@ export PATH=$PATH:~/.bun/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
 export PATH=$PATH:~/.deno/bin
+export PATH=$PATH:~/.go/bin
 export PATH=$PATH:/opt/resolve/bin
 
 export EDITOR=nvim
-export TERM=st
+export TERM=alacritty
+export GOPATH=~/.go
 
 # need this for idea IDE to work correctly on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
