@@ -16,11 +16,16 @@ run() {
 
 run st gnome-terminal alacritty &
 
+run com.spotify.Client &
+
 run pavucontrol &
 
-run com.github.Eloston.UngoogledChromium &
-
 run org.kde.dolphin &
+
+run com.github.Eloston.UngoogledChromium &
+run org.mozilla.firefox &
+
+
 
 picom --experimental-backends &
 
