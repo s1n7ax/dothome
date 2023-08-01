@@ -1,3 +1,4 @@
 #!/bin/env bash
 
 alias o='cd $(go-to-project)'
+alias cdc='cd ~/.s1n7ax'
