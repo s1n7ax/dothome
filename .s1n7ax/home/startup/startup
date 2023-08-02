@@ -16,7 +16,7 @@ run() {
 
 run st gnome-terminal alacritty &
 
-run com.spotify.Client &
+run md.obsidian.Obsidian &
 
 run pavucontrol &
 
