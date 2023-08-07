@@ -1,11 +1,11 @@
-#!/bin/env zsh
+#!/bin/env bash
 
 include () {
     [[ -f "$1" ]] && source "$1"
 }
 
-for profile in ~/.profiles/*(.N); do
-    for file in ~/.s1n7ax/$profile:t/alias/*(.N); do
+for profile in ~/.profiles/*; do
+    for file in ~/.s1n7ax/$(basename $profile)/alias/*; do
         include $file
     done
 done
