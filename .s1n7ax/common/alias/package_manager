@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+
+if command -v pacman &> /dev/null
+then
+  alias p="sudo pacman -S --needed"
+  alias pr="sudo pacman -Rnsuv"
+  alias pl="pacman -Ql"
+  alias ps="pacman -Ss"
+fi
