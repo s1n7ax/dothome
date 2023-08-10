@@ -4,7 +4,9 @@
 if command -v pacman &> /dev/null
 then
   alias p="sudo pacman -S --needed"
-  alias pr="sudo pacman -Rnsuv"
+  alias pu="sudo pacman -Sy"
+  alias puu="sudo pacman -Syu"
+  alias pr="sudo pacman -Rv"
   alias pl="pacman -Ql"
   alias ps="pacman -Ss"
 fi
