@@ -1,0 +1,3 @@
+if [[ "$SHELL" == *"zsh"* ]]; then
+  tail -n 500 .zsh_history | sd '.*\d;' '' | awk '!seen[$0]++' | sk
+fi
