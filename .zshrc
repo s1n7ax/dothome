@@ -109,5 +109,6 @@ bindkey "^[b" backward-word
 bindkey "^[w" forward-word
 bindkey "^[d" delete-word
 bindkey "^[h" backward-delete-word
+bindkey -s "^r" 'find-history | sh^M'
 #  bindkey ^F vi-find-next-char
 
