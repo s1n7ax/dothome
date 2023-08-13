@@ -72,7 +72,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=()
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.s1n7ax/init_local_env
 source ~/.s1n7ax/init_alias
 
-eval "$(~/.cargo/bin/starship init zsh)"
+eval "$(starship init zsh)"
 
 bindkey "^[b" backward-word
 bindkey "^[w" forward-word
