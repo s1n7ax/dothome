@@ -1,0 +1,3 @@
+alias ee="cd ~/.config/astronvim && nvim"
+alias he="nvim ~/.config/home-manager/home.nix"
+alias ne="cd /etc/nixos && nvim configuration.nix"

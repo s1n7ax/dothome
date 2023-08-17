@@ -2,6 +2,8 @@
 
 alias g="git"
 alias ga="git add"
+alias gl="git log --oneline"
+alias gla="git log"
 alias gst="git status"
 alias gp="git pull"
 alias gP="git push"

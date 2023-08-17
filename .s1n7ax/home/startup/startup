@@ -14,24 +14,13 @@ run() {
 	return 1
 }
 
-run st gnome-terminal alacritty &
-
-run md.obsidian.Obsidian &
-
-run pavucontrol &
-
-run org.kde.dolphin &
-
-run com.github.Eloston.UngoogledChromium &
-run org.mozilla.firefox &
-
-
-
-picom --experimental-backends &
-
-# prevent screen from turning off
-run xset s off -dpms &
-
-xset r rate 190 100 &
-
-~/.fehbg &
+# run st gnome-terminal alacritty &
+# 
+# run md.obsidian.Obsidian &
+# 
+# run pavucontrol &
+# 
+# run org.kde.dolphin &
+# 
+# run com.github.Eloston.UngoogledChromium &
+# run org.mozilla.firefox &

@@ -1,9 +1,0 @@
-#!/bin/env bash
-
-alias el="cd ~/.s1n7ax && nvim"
-
-alias el="cd ~/.config/astronvim && lazygit"
-alias ev="cd ~/.config/astronvim && nvim"
-
-alias cdw="cd ~/Workspace"
-alias cdn="cd ~/Workspace/nvim/"

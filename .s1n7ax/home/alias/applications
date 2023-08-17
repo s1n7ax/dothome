@@ -1,8 +1,1 @@
 #!/bin/env bash
-
-alias f="vifmrun"
-alias n="nvim"
-alias v="lvim"
-
-# Other
-alias yt="yt-dlp"

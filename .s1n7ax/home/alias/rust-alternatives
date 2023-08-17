@@ -1,0 +1,7 @@
+alias cat="bat"
+alias ls="exa"
+alias l="exa -lg"
+alias ll="exa -lg"
+alias find="fd"
+alias grep="rg"
+alias fzf="sk"
