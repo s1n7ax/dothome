@@ -22,7 +22,8 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          ./programs/alacritty/alacritty.nix
+          ./programs/alacritty
+          ./programs/nushell
         ];
 
         # Optionally use extraSpecialArgs

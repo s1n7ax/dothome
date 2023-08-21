@@ -1,6 +1,6 @@
 # Nushell Config File
 #
-# version = 0.82.0
+# version = 0.80.0
 
 # For more information on defining custom themes, see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -52,7 +52,6 @@ let dark_theme = {
     list: white
     block: white
     hints: dark_gray
-    search_result: {bg: red fg: white}
 
     shape_and: purple_bold
     shape_binary: purple_bold
@@ -137,7 +136,6 @@ let light_theme = {
     list: white
     block: white
     hints: dark_gray
-    search_result: {fg: white bg: red}
 
     shape_and: purple_bold
     shape_binary: purple_bold
@@ -185,7 +183,7 @@ let light_theme = {
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   # true or false to enable or disable the welcome banner at startup
-  show_banner: true
+  show_banner: false
   ls: {
     use_ls_colors: true # use the LS_COLORS environment variable to colorize output
     clickable_links: true # enable or disable clickable links. Your terminal has to support links.
@@ -205,15 +203,6 @@ let-env config = {
       wrapping_try_keep_words: true # A strategy used by the 'wrapping' methodology
       truncating_suffix: "..." # A suffix used by the 'truncating' methodology
     }
-  }
-
-  # datetime_format determines what a datetime rendered in the shell would look like.
-  # Behavior without this configuration point will be to "humanize" the datetime display,
-  # showing something like "a day ago."
-
-  datetime_format: {
-    normal: '%a, %d %b %Y %H:%M:%S %z'  # shows up in displays of variables or other datetime's outside of tables
-    # table: '%m/%d/%y %I:%M:%S%p'        # generally shows up in tabular outputs such as ls. commenting this out will change it to the default human readable datetime format
   }
 
   explore: {
@@ -274,10 +263,10 @@ let-env config = {
   }
 
   history: {
-    max_size: 100_000 # Session has to be reloaded for this to take effect
+    max_size: 10000 # Session has to be reloaded for this to take effect
     sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
     file_format: "plaintext" # "sqlite" or "plaintext"
-    isolation: true # true enables history isolation, false disables it. true will allow the history to be isolated to the current session. false will allow the history to be shared across all sessions.
+    history_isolation: true # true enables history isolation, false disables it. true will allow the history to be isolated to the current session. false will allow the history to be shared across all sessions.
   }
   completions: {
     case_sensitive: false # set to true to enable case-sensitive completions
@@ -285,14 +274,14 @@ let-env config = {
     partial: true  # set this to false to prevent partial filling of the prompt
     algorithm: "prefix"  # prefix or fuzzy
     external: {
-      enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
+      enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
       max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
       completer: null # check 'carapace_completer' above as an example
     }
   }
   filesize: {
     metric: true # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
-    format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
+    format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
   }
   cursor_shape: {
     emacs: line # block, underscore, line, blink_block, blink_underscore, blink_line (line is the default)
@@ -399,7 +388,7 @@ let-env config = {
             description_text: yellow
         }
         source: { |buffer, position|
-            scope commands
+            $nu.scope.commands
             | where name =~ $buffer
             | each { |it| {value: $it.name description: $it.usage} }
         }
@@ -418,7 +407,7 @@ let-env config = {
             description_text: yellow
         }
         source: { |buffer, position|
-            scope variables
+            $nu.scope.vars
             | where name =~ $buffer
             | sort-by name
             | each { |it| {value: $it.name description: $it.type} }
@@ -442,7 +431,7 @@ let-env config = {
             description_text: yellow
         }
         source: { |buffer, position|
-            scope commands
+            $nu.scope.commands
             | where name =~ $buffer
             | each { |it| {value: $it.name description: $it.usage} }
         }
