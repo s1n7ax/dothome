@@ -1,4 +1,12 @@
-{ config, pkgs, fetchpatch, ... }:
+{ pkgs, ... }:
+
+let dunstConf = pkgs.fetchgit {
+  url = "https://github.com/catppuccin/dunst.git";
+  rev = "a72991e";
+  sha256 = "1LeSKuZcuWr9z6mKnyt1ojFOnIiTupwspGrOw/ts8Yk=";
+};
+
+in
 
 {
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
@@ -104,6 +112,7 @@
       sha256 = "xa9ptHLowpz7MecbunzrgWaOstto5lsA3it9JJzK+70=";
       leaveDotGit = true;
     };
+
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -255,6 +264,11 @@
     package = pkgs.nnn.override {
       withNerdIcons = true;
     };
+  };
+
+  services.dunst = {
+    enable = true;
+    configFile = "${dunstConf}/src/macchiato.conf";
   };
 
   wayland.windowManager.hyprland = {
