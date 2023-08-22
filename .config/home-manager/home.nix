@@ -49,6 +49,7 @@
     easyeffects
     p7zip
     lazydocker
+    unzip
 
     # taking screenshots
     grim
