@@ -79,12 +79,10 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = pkgs.fetchFromGitHub {
-      owner = "AstroNvim";
-      repo = "AstroNvim";
-      rev = "refs/tags/v3.36.0";
-      hash = "sha256:0k1sw72x1r0vbsggpncykdf1x4qmm8h4ghdipkc7km14x4s5c9xv";
-      fetchSubmodules = true;
+    ".config/nvim".source = pkgs.fetchgit {
+      url = "https://github.com/AstroNvim/AstroNvim";
+      rev = "refs/tags/v3.36.3";
+      sha256 = "olbsQuVs61i72JhzfR8utaBKCJ/2PB+bRxIR9mphNBM=";
       leaveDotGit = true;
     };
 
@@ -92,8 +90,6 @@
       url = "https://github.com/s1n7ax/wofi-dracula-theme";
       rev = "4845865";
       hash = "sha256:1ji3g7q6y4n0sshfjca6bh9pymazp6c1l42j24ilk5bhzabz9j09";
-      sparseCheckout = [ "style.css" ];
-      deepClone = false;
     };
 
     ".config/vifm/colors".source = pkgs.fetchgit {
@@ -101,6 +97,7 @@
       rev = "refs/tags/v0.12";
       hash = "sha256:1lx1gylkl0x99zxiwv0h5qxizczzi655dcak89gj0sfz02p67h2c";
     };
+
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
