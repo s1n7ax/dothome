@@ -48,6 +48,7 @@
     davinci-resolve
     easyeffects
     p7zip
+    lazydocker
 
     # taking screenshots
     grim
