@@ -22,6 +22,7 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
+          ./scripts.nix
           ./programs/alacritty
           ./programs/nushell
         ];
