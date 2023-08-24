@@ -47,7 +47,7 @@
       gd = "git diff";
 
       # edit
-      he = "nvim ~/.config/home-manager/home.nix";
+      he = "cd ~/.config/home-manager";
     };
   };
 }
