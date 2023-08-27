@@ -92,30 +92,32 @@
 
         "$mod" = "SUPER";
         "$smod" = "SUPER_SHIFT";
+        "$amod" = "SUPER_ALT";
 
         bind = [
           # run some applications
-          "$mod, 1, exec, flatpak run org.mozilla.firefox"
-          "$mod, 2, exec, alacritty -e vifm"
-          "$mod, 3, exec, flatpak run org.kde.dolphin"
-          "$mod, 4, exec, flatpak run md.obsidian.Obsidian"
           "$mod, P, exec, wofi --show --insensitive drun -Ia"
+
+          "$amod, A, exec, flatpak run org.mozilla.firefox"
+          "$amod, R, exec, alacritty -e vifm"
+          "$amod, S, exec, flatpak run org.kde.dolphin"
+          "$amod, T, exec, flatpak run md.obsidian.Obsidian"
+          "$amod, Z, exec, slurp | grim -g - - | wl-copy -t image/png"
+          ''$amod, X, exec, slurp | grim -t png -g - ~/Pictures/"$(date +'screenshot %y-%m-%d %H:%M:%S').png"''
+
+          "$amod, O, exec, poweroff"
 
           "$smod, Q, exit,"
 
           "$mod, Return, exec, alacritty"
-          "$mod, G, killactive,"
-          "$mod, K, pin"
 
           # window layouts
           "$mod, H, togglefloating,"
           "$mod, Q, fakefullscreen"
           "$mod, W, fullscreen, 1"
           "$mod, F, fullscreen, 0"
-
-          # running apps
-          "$mod, E, exec, slurp | grim -g - - | wl-copy -t image/png"
-          ''$smod, E, exec, slurp | grim -t png -g - ~/Pictures/"$(date +'screenshot %y-%m-%d %H:%M:%S').png"''
+          "$mod, G, killactive,"
+          "$mod, K, pin"
 
           "$mod, H, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"
