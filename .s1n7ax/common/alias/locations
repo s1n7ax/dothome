@@ -1,4 +1,0 @@
-#!/bin/env bash
-
-alias o='cd $(find-projects)'
-alias cdc='cd ~/.s1n7ax'

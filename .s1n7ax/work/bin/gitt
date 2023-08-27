@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-SESSION_NAME=$(basename $(pwd))
-echo "Creating tmux session: $SESSION_NAME"
-tmux new -d -s $SESSION_NAME -n root
-gita "tmux neww -t $SESSION_NAME:" 
