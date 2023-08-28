@@ -237,6 +237,10 @@ in
 
   programs.starship.enable = true;
 
+  programs.obs-studio = {
+    enable = true;
+  };
+
   services.dunst = {
     enable = true;
     configFile = "${dunstConf}/src/macchiato.conf";
