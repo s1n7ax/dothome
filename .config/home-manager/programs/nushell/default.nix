@@ -48,6 +48,7 @@
 
       # edit
       he = "cd ~/.config/home-manager";
+      ne = "cd /etc/nixos";
     };
   };
 }
