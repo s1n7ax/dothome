@@ -235,6 +235,8 @@ in
     };
   };
 
+  programs.starship.enable = true;
+
   services.dunst = {
     enable = true;
     configFile = "${dunstConf}/src/macchiato.conf";
