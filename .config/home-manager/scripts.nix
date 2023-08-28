@@ -30,6 +30,41 @@
         -x 'echo' '{//}' | sk | quick_exit
     '')
 
+    # converts all the possible video files in the current directory to a codec
+    # that is supported by davinci resolve editor
+    (writeShellScriptBin "davincify" ''
+      if [[ $# -eq 0 ]] ; then
+        mkdir -p converted
+
+        vid_files=$(fd \
+          --absolute-path \
+          --type file \
+          --no-ignore \
+          --exact-depth 1 \
+          '.*.mov|.*.avi' \
+          .)
+
+        IFS=$'\n'
+        for line in $vid_files
+        do
+          base_dir=$(dirname "$line")
+          base_file=$(basename "$line")
+          base_file_no_ext=$(echo "$base_file" | cut -f 1 -d '.')
+
+          source="$line"
+          target="$base_dir/converted/$base_file_no_ext.mov"
+
+          echo "$base_file_no_ext"
+          echo "$source"
+          echo "$target"
+
+          ffmpeg -i "$source" -c:v mjpeg -q:v 1 -c:a pcm_s16le -q:a 1 "$target" 2> /dev/null
+        done
+
+        exit 0
+      fi
+    '')
+
     (writeShellScriptBin "conv-mkv-to-mov" ''
       #!/bin/sh
 
@@ -128,6 +163,7 @@
 	      find_files "$path" | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
       done
     '')
+
     (writeShellScriptBin "wofiw" ''
       wofi --show drun \
       --allow-images \
