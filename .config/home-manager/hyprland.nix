@@ -96,7 +96,7 @@
 
         bind = [
           # run some applications
-          "$mod, P, exec, wofi --show --insensitive drun -Ia"
+          "$mod, P, exec, wofiw"
 
           "$amod, A, exec, flatpak run org.mozilla.firefox"
           "$amod, R, exec, alacritty -e vifm"

@@ -128,5 +128,11 @@
 	      find_files "$path" | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
       done
     '')
+    (writeShellScriptBin "wofiw" ''
+      wofi --show drun \
+      --allow-images \
+      --no-actions \
+      --insensitive
+    '')
   ];
 }
