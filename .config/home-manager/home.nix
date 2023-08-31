@@ -59,6 +59,7 @@ in
     lazydocker
     unzip
     libsForQt5.gwenview
+    rclone
 
     # taking screenshots
     grim
