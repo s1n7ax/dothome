@@ -58,6 +58,7 @@ in
     p7zip
     lazydocker
     unzip
+    libsForQt5.gwenview
 
     # taking screenshots
     grim
@@ -247,11 +248,19 @@ in
   };
 
   fonts.fontconfig.enable = true;
+
   xdg.mime.enable = true;
   xdg.mimeApps = {
     enable = true;
+
+    associations.removed = {
+      "image/jpeg" = [ "org.mozilla.firefox.desktop" "com.microsoft.Edge.desktop" ];
+    };
     # associations.added = [];
     defaultApplications = {
+      "image/jpeg" = [
+        "gwenview"
+      ];
       "application/pdf" = [
         "org.pwmt.zathura.desktop"
       ];
