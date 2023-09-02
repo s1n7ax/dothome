@@ -60,6 +60,7 @@ in
     unzip
     libsForQt5.gwenview
     rclone
+    sshfs
 
     # taking screenshots
     grim
