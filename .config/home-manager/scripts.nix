@@ -170,5 +170,21 @@
       --no-actions \
       --insensitive
     '')
+    (writeShellScriptBin "camera-connect" ''
+      set -euo pipefail
+
+      sudo modprobe v4l2loopback exclusive_caps=1 max_buffer=2
+
+      gphoto2 \
+	      --stdout \
+	      --set-config viewfinder=1 \
+	      --capture-movie |
+	      ffmpeg \
+		      -i - \
+		      -vcodec copy \
+		      -threads 1 \
+		      -f v4l2 \
+		      "/dev/$(ls -1 /sys/devices/virtual/video4linux)"
+    '')
   ];
 }
