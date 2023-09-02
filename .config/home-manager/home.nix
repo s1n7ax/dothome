@@ -61,6 +61,7 @@ in
     libsForQt5.gwenview
     rclone
     sshfs
+    nsxiv
 
     # taking screenshots
     grim
@@ -258,42 +259,42 @@ in
 
   fonts.fontconfig.enable = true;
 
-  xdg.mime.enable = true;
-  xdg.mimeApps = {
-    enable = true;
+  xdg = {
+    userDirs.enable = true;
+    mime.enable = true;
+    mimeApps = {
+      enable = true;
 
-    associations.removed = {
-      "image/jpeg" = [ "org.mozilla.firefox.desktop" "com.microsoft.Edge.desktop" ];
-    };
-    # associations.added = [];
-    defaultApplications = {
-      "image/jpeg" = [
-        "gwenview"
-      ];
-      "application/pdf" = [
-        "org.pwmt.zathura.desktop"
-      ];
-      "text/html" = [
-        "org.mozilla.firefox.desktop"
-      ];
-      "text/xml" = [
-        "org.mozilla.firefox.desktop"
-			];
-      "application/xhtml+xml" = [
-        "org.mozilla.firefox.desktop"
-			];
-      "application/vnd.mozilla.xul+xml" = [
-        "org.mozilla.firefox.desktop"
-			];
-      "text/mml" = [
-        "org.mozilla.firefox.desktop"
-			];
-      "x-scheme-handler/http" = [
-        "org.mozilla.firefox.desktop"
-			];
-      "x-scheme-handler/https" = [
-        "org.mozilla.firefox.desktop"
-			];
+      associations.removed = {
+        "image/png" = [
+          "org.mozilla.firefox.desktop"
+          "com.microsoft.Edge.desktop"
+        ];
+      };
+      defaultApplications = let 
+        image_viewers = [
+          "nsxiv.desktop"
+          "org.kde.gwenview.desktop"
+        ];
+
+        web_content = [
+          "org.mozilla.firefox.desktop"
+			  ];
+      in 
+      {
+        "image/png" = image_viewers;
+        "image/jpeg" = image_viewers;
+        "image/webp" = image_viewers;
+        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        "text/html" = web_content;
+        "text/xml" = web_content;
+        "application/xhtml+xml" = web_content;
+        "application/vnd.mozilla.xul+xml" = web_content;
+        "text/mml" = web_content;
+        "x-scheme-handler/http" = web_content;
+        "x-scheme-handler/https" = web_content;
+      };
     };
   };
+  
 }
