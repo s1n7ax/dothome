@@ -41,7 +41,7 @@
           --type file \
           --no-ignore \
           --exact-depth 1 \
-          '.*.mov|.*.avi' \
+          '.*.mov|.*.avi|.*.mkv' \
           .)
 
         IFS=$'\n'
