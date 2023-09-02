@@ -159,14 +159,28 @@ in
         mainBranches = [ "main" ];
         disableForcePushing = true;
       };
-      keybinding.universal = {
-        prevItem = "e";
-        nextItem = "n";
-        "prevItem-alt" = "m";
-        "nextItem-alt" = "i";
+      keybinding = {
+        universal = {
+          prevItem = "e";
+          nextItem = "n";
+          prevBlock = "m";
+          nextBlock = "i";
 
-        nextMatch = "k";
-        prevMatch = "K";
+          nextMatch = "k";
+          prevMatch = "K";
+        };
+
+        files = {
+          ignoreFile = "I";
+        };
+
+        branches = {
+          viewGitFlowOptions = "I";
+        };
+
+        submodules = {
+          init = "I";
+        };
       };
     };
   };
