@@ -89,13 +89,6 @@ in
       rev = "refs/tags/v0.12";
       hash = "sha256:1lx1gylkl0x99zxiwv0h5qxizczzi655dcak89gj0sfz02p67h2c";
     };
-
-    ".config/astronvim".source = pkgs.fetchgit {
-      url = "https://github.com/s1n7ax/astronvim-dotnvim.git";
-      rev = "9acaa8f";
-      sha256 = "xa9ptHLowpz7MecbunzrgWaOstto5lsA3it9JJzK+70=";
-      leaveDotGit = true;
-    };
   };
 
   # You can also manage environment variables but you will have to manually
