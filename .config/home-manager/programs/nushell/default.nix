@@ -27,7 +27,8 @@
 
       # rust alternatives
       cat = "bat";
-      l = "exa -l";
+      ls = "exa -lg";
+      l = "exa -lg";
       ll = "exa -lg";
       find = "fd";
       grep = "rg";
