@@ -68,6 +68,7 @@ in
     stylua
     lua-language-server
     rust-analyzer
+    prettierd
 
     # taking screenshots
     grim
