@@ -62,6 +62,12 @@ in
     rclone
     sshfs
     nsxiv
+    dos2unix
+
+    # neovim stuff
+    stylua
+    lua-language-server
+    rust-analyzer
 
     # taking screenshots
     grim
