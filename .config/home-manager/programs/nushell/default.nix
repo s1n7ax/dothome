@@ -1,17 +1,37 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   home.file = {
     ".config/nushell/modules".source = ./modules;
+    ".config/nushell/scripts".source = pkgs.fetchgit {
+      url = "https://github.com/nushell/nu_scripts.git";
+      rev = "5ed3a961af0ea3dce24c36eae84580b4ec53fe35";
+      sha256 = "eq6Drz7mSjB6GV5+uXJPYf2U27leaZQo5edfuzhTA0Q=";
+      sparseCheckout = [
+        "custom-completions/cargo"
+        "custom-completions/git"
+        "custom-completions/make"
+        "custom-completions/nix"
+        "custom-completions/npm"
+        "custom-completions/pass"
+        "custom-completions/yarn"
+      ];
+    };
   };
 
   programs.nushell = {
     enable = true;
 
-    # envFile.source = ./config/env.nu;
-    # configFile.source = ./config/config.nu;
     extraConfig = ''
       use ~/.config/nushell/modules/utils.nu
+
+      use ~/.config/nushell/scripts/custom-completions/cargo/cargo-completions.nu *
+      # use ~/.config/nushell/scripts/custom-completions/git/git-completions.nu *
+      use ~/.config/nushell/scripts/custom-completions/make/make-completions.nu *
+      use ~/.config/nushell/scripts/custom-completions/nix/nix-completions.nu *
+      use ~/.config/nushell/scripts/custom-completions/npm/npm-completions.nu *
+      use ~/.config/nushell/scripts/custom-completions/pass/pass-completions.nu *
+      use ~/.config/nushell/scripts/custom-completions/yarn/yarn-completion.nu *
 
       $env.config = {
         show_banner: false
