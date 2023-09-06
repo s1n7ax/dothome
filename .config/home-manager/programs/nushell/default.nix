@@ -59,9 +59,14 @@
       ne = "utils open-editor ~/.config/nvim";
       ae = "utils open-editor ~/.config/astronvim";
 
+      # lazygit
       hn = "utils run-command-at 'lazygit' ~/.config/home-manager";
       nn = "utils run-command-at 'lazygit' ~/.config/nvim";
       an = "utils run-command-at 'lazygit' ~/.config/astronvim";
+
+      # locations
+      cdw = "cd ~/Workspace";
+      cdn = "cd /etc/nixos";
     };
   };
 }
