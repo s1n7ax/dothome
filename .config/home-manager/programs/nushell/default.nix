@@ -1,11 +1,18 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
+  home.file = {
+    ".config/nushell/modules".source = ./modules;
+  };
+
   programs.nushell = {
     enable = true;
+
     # envFile.source = ./config/env.nu;
     # configFile.source = ./config/config.nu;
     extraConfig = ''
+      use ~/.config/nushell/modules/utils.nu
+
       $env.config = {
         show_banner: false
       }
@@ -48,8 +55,13 @@
       gd = "git diff";
 
       # edit
-      he = "cd ~/.config/home-manager";
-      ne = "cd /etc/nixos";
+      he = "utils open-editor ~/.config/home-manager";
+      ne = "utils open-editor ~/.config/nvim";
+      ae = "utils open-editor ~/.config/astronvim";
+
+      hn = "utils run-command-at 'lazygit' ~/.config/home-manager";
+      nn = "utils run-command-at 'lazygit' ~/.config/nvim";
+      an = "utils run-command-at 'lazygit' ~/.config/astronvim";
     };
   };
 }
