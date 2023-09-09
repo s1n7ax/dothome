@@ -53,6 +53,7 @@
       yt = "yt-dlp";
 
       # rust alternatives
+      cd = "z";
       cat = "bat";
       ls = "exa -lg";
       l = "exa -lg";
@@ -78,11 +79,13 @@
       he = "utils open-editor ~/.config/home-manager";
       ne = "utils open-editor ~/.config/nvim";
       ae = "utils open-editor ~/.config/astronvim";
+      se = "utils open-editor ~/Notes";
 
       # lazygit
       hn = "utils run-command-at 'lazygit' ~/.config/home-manager";
       nn = "utils run-command-at 'lazygit' ~/.config/nvim";
       an = "utils run-command-at 'lazygit' ~/.config/astronvim";
+      sn = "utils run-command-at 'lazygit' ~/Notes";
 
       # locations
       cdw = "cd ~/Workspace";
