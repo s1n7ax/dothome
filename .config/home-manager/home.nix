@@ -114,6 +114,12 @@ in
   };
 
   # Let Home Manager install and manage itself.
+  programs.zoxide = {
+    enable  = true;
+    enableNushellIntegration = true;
+    enableZshIntegration = false;
+    enableFishIntegration = false;
+  };
   programs.home-manager.enable = true;
   programs.wofi.enable = true;
 
