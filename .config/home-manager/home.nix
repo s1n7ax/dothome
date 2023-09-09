@@ -39,6 +39,7 @@ in
     starship
     skim
     cargo
+    zellij
 
     # other packages
     pavucontrol
