@@ -29,6 +29,7 @@
           ./home.nix
           ./scripts.nix
           ./hyprland.nix
+          ./systemd.nix
           ./programs/alacritty
           ./programs/nushell
         ];
