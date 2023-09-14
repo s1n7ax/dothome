@@ -80,12 +80,14 @@
       nn = "utils open-editor ~/.config/nvim";
       na = "utils open-editor ~/.config/astronvim";
       no = "utils open-editor ~/Notes";
+      np = "utils open-editor (project-menu)";
 
       # lazygit
       lh = "utils run-command-at 'lazygit' ~/.config/home-manager";
       ln = "utils run-command-at 'lazygit' ~/.config/nvim";
       la = "utils run-command-at 'lazygit' ~/.config/astronvim";
       lo = "utils run-command-at 'lazygit' ~/Notes";
+      lp = "utils run-command-at 'lazygit' (project-menu)";
 
       # locations
       cdw = "cd ~/Workspace";
