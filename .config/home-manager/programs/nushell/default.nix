@@ -35,6 +35,73 @@
 
       $env.config = {
         show_banner: false
+
+        keybindings: [
+          {
+            name: Cursor_Left
+            modifier: ALT
+            keycode: Char_m
+            mode: emacs
+            event: {
+              send: Left,
+            }
+          },
+          {
+            name: Cursor_Right
+            modifier: ALT
+            keycode: Char_i
+            mode: emacs
+            event: {
+              send: Right,
+            }
+          },
+          {
+            name: Cursor_Down
+            modifier: ALT
+            keycode: Char_n
+            mode: emacs
+            event: {
+              send: Down,
+            }
+          },
+          {
+            name: Cursor_Up
+            modifier: ALT
+            keycode: Char_e
+            mode: emacs
+            event: {
+              send: Up,
+            }
+          },
+          {
+            name: Cursor_Next_Word
+            modifier: ALT
+            keycode: Char_w
+            mode: emacs
+            event: {
+              edit: MoveBigWordRightStart,
+            }
+          },
+          {
+            name: Cursor_Prev_Word
+            modifier: ALT
+            keycode: Char_b
+            mode: emacs
+            event: {
+              edit: MoveWordLeft
+            }
+          },
+          {
+            name: Delete_Word
+            modifier: ALT
+            keycode: Char_d
+            mode: emacs
+            event: [
+              { edit: MoveWordLeft },
+              { edit: CutWordRightToNext },
+            ]
+          }
+        ]
       }
     '';
 
