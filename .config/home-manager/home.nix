@@ -38,7 +38,7 @@ in
     ripgrep
     starship
     skim
-    cargo
+    # cargo
     zellij
 
     # other packages
@@ -48,11 +48,11 @@ in
     (python3.withPackages(py-packages: with py-packages; [ pip ]))
     vifm
     ffmpeg_6-full
-    gphoto2
+    gphoto2 # camera connect
     yt-dlp
     gcc
     neofetch
-    axel
+    axel # wget but in multi-connection
     blueman
     davinci-resolve
     easyeffects
@@ -62,13 +62,14 @@ in
     libsForQt5.gwenview
     rclone
     sshfs
-    nsxiv
-    dos2unix
+    nsxiv # image viewer
+    appimage-run
+    rustup
 
     # neovim stuff
     stylua
     lua-language-server
-    rust-analyzer
+    # rust-analyzer
     prettierd
 
     # taking screenshots
