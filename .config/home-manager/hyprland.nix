@@ -13,7 +13,9 @@
         "swaybg -i .wallpaper/*"
       ];
 
-      env = "XCURSOR_SIZE,24";
+      env = [
+        "XCURSOR_SIZE,35"
+      ];
 
       input = {
           kb_layout = "us";
