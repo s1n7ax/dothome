@@ -65,11 +65,13 @@ in
     nsxiv # image viewer
     appimage-run
     rustup
+    cargo-leptos
+    cargo-generate
+    sass
 
     # neovim stuff
     stylua
     lua-language-server
-    # rust-analyzer
     prettierd
 
     # taking screenshots
