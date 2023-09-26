@@ -8,10 +8,14 @@
           --type f \
           --base-directory ~/.password-store \
         | sd '.gpg' "" \
-        | sk
+        | skim
       )
 
       pass -c "$record"
+    '')
+
+    (writeShellScriptBin "skim" ''
+      sk --bind "ctrl-n:down,ctrl-e:up"
     '')
 
     (writeShellScriptBin "project-menu" ''
@@ -27,7 +31,7 @@
 
       fd -I -i -H \
         -t d ^.git$ ~/.config ~/Workspace \
-        -x 'echo' '{//}' | sk | quick_exit
+        -x 'echo' '{//}' | skim | quick_exit
     '')
 
     # converts all the possible video files in the current directory to a codec
