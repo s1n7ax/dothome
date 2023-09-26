@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-my, ... }:
 
 let dunstConf = pkgs.fetchgit {
   url = "https://github.com/catppuccin/dunst.git";

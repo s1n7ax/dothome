@@ -36,6 +36,24 @@
         "type": "github"
       }
     },
+    "nixpkgs-my": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1695545223,
+        "narHash": "sha256-ifkO7OUbC14s1U8EA4huL2cDAkWN1WATpN7lVc8ePtY=",
+        "owner": "s1n7ax",
+        "repo": "nix-flakes",
+        "rev": "00c101be82fba60167182b2c1a3173eb26457946",
+        "type": "github"
+      },
+      "original": {
+        "owner": "s1n7ax",
+        "repo": "nix-flakes",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1692698134,
@@ -52,10 +70,25 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1695132891,
+        "narHash": "sha256-cJR9AFHmt816cW/C9necLJyOg/gsnkvEeFAfxgeM1hc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "8b5ab8341e33322e5b66fb46ce23d724050f6606",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-my": "nixpkgs-my",
         "nixpkgs-stable": "nixpkgs-stable"
       }
     }
