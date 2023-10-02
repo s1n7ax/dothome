@@ -1,7 +1,7 @@
-{ pkgs-stable, ... }:
+{ pkgs-stable, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
-    package = pkgs-stable.hyprland;
+    package = pkgs.hyprland;
     enable = true;
     enableNvidiaPatches = true;
 
