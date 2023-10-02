@@ -34,7 +34,8 @@
               natural_scroll = false;
           };
 
-          sensitivity = -1;
+          sensitivity = -0.5;
+          accel_profile = "flat";
       };
 
       general = {
