@@ -1,10 +1,11 @@
 { pkgs, pkgs-my, ... }:
 
-let dunstConf = pkgs.fetchgit {
-  url = "https://github.com/catppuccin/dunst.git";
-  rev = "a72991e";
-  sha256 = "1LeSKuZcuWr9z6mKnyt1ojFOnIiTupwspGrOw/ts8Yk=";
-};
+let
+  dunstConf = pkgs.fetchgit {
+    url = "https://github.com/catppuccin/dunst.git";
+    rev = "a72991e";
+    sha256 = "1LeSKuZcuWr9z6mKnyt1ojFOnIiTupwspGrOw/ts8Yk=";
+  };
 
 in
 
@@ -45,7 +46,7 @@ in
     pavucontrol
     wl-clipboard
     nodejs_20
-    (python3.withPackages(py-packages: with py-packages; [ pip ]))
+    (python3.withPackages (py-packages: with py-packages; [ pip ]))
     vifm
     ffmpeg_6-full
     gphoto2 # camera connect
@@ -73,6 +74,7 @@ in
     stylua
     lua-language-server
     prettierd
+    nixpkgs-fmt
 
     # taking screenshots
     grim
@@ -119,7 +121,7 @@ in
 
   # Let Home Manager install and manage itself.
   programs.zoxide = {
-    enable  = true;
+    enable = true;
     enableNushellIntegration = true;
     enableZshIntegration = false;
     enableFishIntegration = false;
@@ -288,30 +290,31 @@ in
           "com.microsoft.Edge.desktop"
         ];
       };
-      defaultApplications = let 
-        image_viewers = [
-          "nsxiv.desktop"
-          "org.kde.gwenview.desktop"
-        ];
+      defaultApplications =
+        let
+          image_viewers = [
+            "nsxiv.desktop"
+            "org.kde.gwenview.desktop"
+          ];
 
-        web_content = [
-          "org.mozilla.firefox.desktop"
-			  ];
-      in 
-      {
-        "image/png" = image_viewers;
-        "image/jpeg" = image_viewers;
-        "image/webp" = image_viewers;
-        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-        "text/html" = web_content;
-        "text/xml" = web_content;
-        "application/xhtml+xml" = web_content;
-        "application/vnd.mozilla.xul+xml" = web_content;
-        "text/mml" = web_content;
-        "x-scheme-handler/http" = web_content;
-        "x-scheme-handler/https" = web_content;
-      };
+          web_content = [
+            "org.mozilla.firefox.desktop"
+          ];
+        in
+        {
+          "image/png" = image_viewers;
+          "image/jpeg" = image_viewers;
+          "image/webp" = image_viewers;
+          "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+          "text/html" = web_content;
+          "text/xml" = web_content;
+          "application/xhtml+xml" = web_content;
+          "application/vnd.mozilla.xul+xml" = web_content;
+          "text/mml" = web_content;
+          "x-scheme-handler/http" = web_content;
+          "x-scheme-handler/https" = web_content;
+        };
     };
   };
-  
+
 }
