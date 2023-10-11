@@ -33,7 +33,7 @@ in
     bat
     difftastic
     ripgrep
-    exa
+    eza
     fd
     sd
     ripgrep

@@ -130,9 +130,9 @@
       # rust alternatives
       cd = "z";
       cat = "bat";
-      ls = "exa -lg";
-      l = "exa -lg";
-      ll = "exa -lg";
+      ls = "eza -lg";
+      l = "eza -lg";
+      ll = "eza -lg";
       find = "fd";
       grep = "rg";
       fzf = "sk";
