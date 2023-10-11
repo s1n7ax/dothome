@@ -69,6 +69,7 @@ in
     cargo-leptos
     cargo-generate
     sass
+    pkgs-my.devcontainer
 
     # neovim stuff
     stylua

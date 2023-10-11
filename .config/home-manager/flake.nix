@@ -9,9 +9,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   nixpkgs-my = {
+    nixpkgs-my = {
       url = "github:s1n7ax/nix-flakes";
-   };
+    };
   };
 
   outputs = { nixpkgs, nixpkgs-stable, nixpkgs-my, home-manager, ... }:
@@ -20,12 +20,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
       pkgs-my = nixpkgs-my.packages.${system};
-    in {
+    in
+    {
       homeConfigurations."s1n7ax" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit pkgs-stable;
           inherit pkgs-my;
+          inherit pkgs-stable;
         };
 
         # Specify your home configuration modules here, for example,
