@@ -189,6 +189,7 @@ in
 
           nextMatch = "k";
           prevMatch = "K";
+          edit = "E";
         };
 
         files = {
