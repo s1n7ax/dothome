@@ -142,37 +142,37 @@
       set -euxo pipefail
 
       if [[ $# -eq 0 ]] ; then
-	      echo 'Path to share should be passed'
-	      exit 1
+      	echo 'Path to share should be passed'
+      	exit 1
       fi
 
       function find_files {
-	      if [ -d "$1" ]; then
-		      find $1 -type f
-	      else
-		      echo $1
-	      fi
+      	if [ -d "$1" ]; then
+      		find $1 -type f
+      	else
+      		echo $1
+      	fi
       }
 
       AVAILABLE=$(kdeconnect-cli --list-available --name-only)
       DEVICE_COUNT=$(echo "$AVAILABLE" | wc -l)
 
       if [ $DEVICE_COUNT -gt 1 ]; then
-	      PICKED_DEVICE=$(echo "$AVAILABLE" | dmenu)
+      	PICKED_DEVICE=$(echo "$AVAILABLE" | dmenu)
       else
-	      PICKED_DEVICE=$AVAILABLE
+      	PICKED_DEVICE=$AVAILABLE
       fi
 
       for path in "$@"; do
-	      find_files "$path" | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
+      	find_files "$path" | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
       done
     '')
 
     (writeShellScriptBin "wofiw" ''
       wofi --show drun \
-      --allow-images \
-      --no-actions \
-      --insensitive
+        --allow-images \
+        --no-actions \
+        --insensitive
     '')
     (writeShellScriptBin "camera-connect" ''
       set -euo pipefail
@@ -180,15 +180,15 @@
       sudo modprobe v4l2loopback exclusive_caps=1 max_buffer=2
 
       gphoto2 \
-	      --stdout \
-	      --set-config viewfinder=1 \
-	      --capture-movie |
-	      ffmpeg \
-		      -i - \
-		      -vcodec copy \
-		      -threads 1 \
-		      -f v4l2 \
-		      "/dev/$(ls -1 /sys/devices/virtual/video4linux)"
+      	--stdout \
+      	--set-config viewfinder=1 \
+      	--capture-movie |
+      	ffmpeg \
+      		-i - \
+      		-vcodec copy \
+      		-threads 1 \
+      		-f v4l2 \
+      		"/dev/$(ls -1 /sys/devices/virtual/video4linux)"
     '')
   ];
 }
