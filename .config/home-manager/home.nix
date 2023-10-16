@@ -55,7 +55,7 @@ in
     neofetch
     axel # wget but in multi-connection
     blueman
-    davinci-resolve
+    # davinci-resolve
     easyeffects
     p7zip
     lazydocker
