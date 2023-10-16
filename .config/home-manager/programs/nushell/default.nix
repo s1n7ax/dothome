@@ -38,6 +38,60 @@
 
         keybindings: [
           {
+            name: Completion_Next,
+            modifier: CONTROL,
+            keycode: Char_n,
+            mode: emacs,
+            event: {
+              send: MenuDown
+            }
+          },
+          {
+            name: Completion_Prev,
+            modifier: CONTROL,
+            keycode: Char_e,
+            mode: emacs,
+            event: {
+              send: MenuUp
+            }
+          },
+          {
+            name: Completion_Right,
+            modifier: CONTROL,
+            keycode: Char_i,
+            mode: emacs,
+            event: {
+              send: MenuRight
+            }
+          },
+          {
+            name: Completion_Left,
+            modifier: CONTROL,
+            keycode: Char_m,
+            mode: emacs,
+            event: {
+              send: MenuLeft
+            }
+          },
+          {
+            name: History_Hint_Complete,
+            modifier: CONTROL,
+            keycode: Char_s,
+            mode: emacs,
+            event: {
+              send: HistoryHintComplete
+            }
+          },
+          {
+            name: Word_Complete,
+            modifier: CONTROL,
+            keycode: Char_t,
+            mode: emacs,
+            event: {
+              send: HistoryHintWordComplete
+            }
+          },
+          {
             name: Cursor_Left
             modifier: ALT
             keycode: Char_m
