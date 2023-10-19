@@ -55,7 +55,6 @@ in
     neofetch
     axel # wget but in multi-connection
     blueman
-    # davinci-resolve
     easyeffects
     p7zip
     lazydocker
@@ -69,6 +68,7 @@ in
     cargo-leptos
     cargo-generate
     sass
+    pkgs-my.davinci-resolve
     pkgs-my.devcontainer
 
     # neovim stuff
