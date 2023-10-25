@@ -158,7 +158,7 @@
       DEVICE_COUNT=$(echo "$AVAILABLE" | wc -l)
 
       if [ $DEVICE_COUNT -gt 1 ]; then
-      	PICKED_DEVICE=$(echo "$AVAILABLE" | dmenu)
+      	PICKED_DEVICE=$(echo "$AVAILABLE" | wofi --dmenu)
       else
       	PICKED_DEVICE=$AVAILABLE
       fi
