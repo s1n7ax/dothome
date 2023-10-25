@@ -1,4 +1,4 @@
-{ pkgs-stable, pkgs, ... }:
+{ pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     package = pkgs.hyprland;
@@ -8,6 +8,19 @@
     xwayland.enable = true;
 
     settings = {
+
+      windowrulev2 = [
+        "workspace 1,class:(org.kde.digikam)"
+        "workspace 1,class:(steam)"
+        "workspace 3,class:(Tor Browser)"
+        "workspace 3,class:(obsidian)"
+        "workspace 4,class:(firefox)"
+        "workspace 5,class:(com.obsproject.Studio)"
+        "workspace 8,class:(pavucontrol)"
+
+        "float,class:(steam),title:(Friends List)"
+        "float,class:(Tor Browser)"
+      ];
       monitor = ",preferred,auto,auto";
       exec-once = [
         "swaybg -i .wallpaper/*"
