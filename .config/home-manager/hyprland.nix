@@ -11,7 +11,7 @@
 
       windowrulev2 = [
         "workspace 1,class:(org.kde.digikam)"
-        "workspace 1,class:(steam)"
+        "workspace 2,class:(steam),float(0)"
         "workspace 3,class:(Tor Browser)"
         "workspace 3,class:(obsidian)"
         "workspace 4,class:(firefox)"
