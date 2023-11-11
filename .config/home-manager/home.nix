@@ -68,6 +68,8 @@ in
     cargo-leptos
     cargo-generate
     sass
+    jdk17
+
     pkgs-my.davinci-resolve
     pkgs-my.devcontainer
 
