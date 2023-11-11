@@ -82,7 +82,7 @@ in
     slurp
     xdg-utils
 
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
 
   home.file = {
