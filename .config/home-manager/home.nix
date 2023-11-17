@@ -69,6 +69,8 @@ in
     cargo-generate
     sass
     jdk17
+    gnumake
+    xfce.thunar
 
     pkgs-my.davinci-resolve
     pkgs-my.devcontainer
