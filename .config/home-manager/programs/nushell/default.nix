@@ -182,7 +182,6 @@
       h = "Hyprland";
 
       # rust alternatives
-      cd = "z";
       cat = "bat";
       ls = "eza -lg";
       l = "eza -lg";
