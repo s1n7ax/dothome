@@ -127,7 +127,7 @@ in
   # Let Home Manager install and manage itself.
   programs.zoxide = {
     enable = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
     enableZshIntegration = false;
     enableFishIntegration = false;
   };
