@@ -36,6 +36,7 @@
           ./scripts.nix
           ./hyprland.nix
           ./systemd.nix
+          ./programs/zsh.nix
           ./programs/alacritty
           ./programs/nushell
         ];

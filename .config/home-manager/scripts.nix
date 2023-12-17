@@ -1,6 +1,11 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    (writeShellScriptBin "run-command-at" ''
+      cd "$2";
+      "$1";
+    '')
+
     (writeShellScriptBin "pass-menu" ''
       record=$(
         fd \

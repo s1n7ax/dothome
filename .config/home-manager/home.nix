@@ -70,6 +70,8 @@ in
     sass
     jdk17
     gnumake
+    firefox
+    ungoogled-chromium
     xfce.thunar
 
     pkgs-my.davinci-resolve
@@ -128,7 +130,7 @@ in
   programs.zoxide = {
     enable = true;
     enableNushellIntegration = false;
-    enableZshIntegration = false;
+    enableZshIntegration = true;
     enableFishIntegration = false;
   };
   programs.home-manager.enable = true;

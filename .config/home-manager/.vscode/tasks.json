@@ -1,0 +1,9 @@
+{
+	"tasks": [
+		{
+			"label": "Home Manager Switch",
+			"type": "shell",
+			"command": "home-manager --impure switch"
+		}
+	]
+}
