@@ -94,8 +94,8 @@ in
   home.file = {
     ".config/nvim".source = pkgs.fetchgit {
       url = "https://github.com/AstroNvim/AstroNvim";
-      rev = "refs/tags/v3.39.0";
-      sha256 = "fRmEmqFb+e9wvNrVbZrAfMg4tVf4CgPwsgloITn5kQ4=";
+      rev = "refs/tags/v3.40.3";
+      sha256 = "KKlT3GveONyjXUdkaBVwjWnu07Il7sUKeD3dOaLqPPw=";
       leaveDotGit = true;
     };
 

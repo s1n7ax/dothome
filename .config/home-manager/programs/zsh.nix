@@ -70,6 +70,7 @@
       lp = "run-command-at 'lazygit' (project-menu)";
 
       # locations
+      cd = "z";
       cdw = "cd ~/Workspace";
       cdn = "cd /etc/nixos";
     };
