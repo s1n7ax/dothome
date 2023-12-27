@@ -2,6 +2,11 @@
 {
   home.packages = with pkgs; [
     (writeShellScriptBin "run-command-at" ''
+      # just exit if the location is empty
+      if [ -z "$2" ]; then
+        exit 0;
+      fi
+
       cd "$2";
       "$1";
     '')
@@ -161,6 +166,16 @@
 
       AVAILABLE=$(kdeconnect-cli --list-available --name-only)
       DEVICE_COUNT=$(echo "$AVAILABLE" | wc -l)
+
+      # when the computer boots for the first time, device cannot connect.
+      # I think this is due to the daemon not running
+      # so following will make sure daemon is running
+      if [ $DEVICE_COUNT -eq 0 ]; then
+        kdeconnect-cli --refresh;
+
+        # just waiting for few seconds so devices got time to connect to host
+        sleep 2
+      fi
 
       if [ $DEVICE_COUNT -gt 1 ]; then
       	PICKED_DEVICE=$(echo "$AVAILABLE" | wofi --dmenu)
