@@ -56,11 +56,11 @@
 
 
       # edit
-      nh = "run-command-at 'nvim' ~/.config/home-manager; ";
-      nn = "run-command-at 'nvim' ~/.config/nvim;";
-      na = "run-command-at 'nvim' ~/.config/astronvim;";
-      no = "run-command-at 'nvim' ~/Notes;";
-      np = "run-command-at 'nvim' $(project-menu)";
+      nh = "run-command-at 'neovide' ~/.config/home-manager; ";
+      nn = "run-command-at 'neovide' ~/.config/nvim;";
+      na = "run-command-at 'neovide' ~/.config/astronvim;";
+      no = "run-command-at 'neovide' ~/Notes;";
+      np = "run-command-at 'neovide' $(project-menu)";
 
       # lazygit
       lh = "run-command-at 'lazygit' ~/.config/home-manager";
