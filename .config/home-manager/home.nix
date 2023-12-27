@@ -72,7 +72,7 @@ in
     gnumake
     firefox
     ungoogled-chromium
-    xfce.thunar
+    neovide
 
     pkgs-my.davinci-resolve
     pkgs-my.devcontainer
