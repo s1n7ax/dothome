@@ -56,11 +56,11 @@
 
 
       # edit
-      nh = "run-command-at 'neovide' ~/.config/home-manager; ";
-      nn = "run-command-at 'neovide' ~/.config/nvim;";
-      na = "run-command-at 'neovide' ~/.config/astronvim;";
-      no = "run-command-at 'neovide' ~/Notes;";
-      np = "run-command-at 'neovide' $(project-menu)";
+      nh = "run-command-at 'nvim' ~/.config/home-manager; ";
+      nn = "run-command-at 'nvim' ~/.config/nvim;";
+      na = "run-command-at 'nvim' ~/.config/astronvim;";
+      no = "run-command-at 'nvim' ~/Notes;";
+      np = "run-command-at 'nvim' $(project-menu)";
 
       # lazygit
       lh = "run-command-at 'lazygit' ~/.config/home-manager";
@@ -73,6 +73,9 @@
       cd = "z";
       cdw = "cd ~/Workspace";
       cdn = "cd /etc/nixos";
+
+      # home manager
+      hm = "cd ~/.config/home-manager && nix flake update && home-manager --impure switch --refresh";
     };
   };
 }
