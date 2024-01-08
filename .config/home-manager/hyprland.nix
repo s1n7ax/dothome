@@ -69,7 +69,7 @@
 
         blur = {
           enabled = true;
-          size = 3;
+          size = 4;
           passes = 2;
         };
 
