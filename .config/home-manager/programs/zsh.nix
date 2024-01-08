@@ -58,7 +58,6 @@
       # edit
       nh = "run-command-at 'nvim' ~/.config/home-manager; ";
       nn = "run-command-at 'nvim' ~/.config/nvim;";
-      na = "run-command-at 'nvim' ~/.config/astronvim;";
       no = "run-command-at 'nvim' ~/Notes;";
       np = "run-command-at 'nvim' $(project-menu)";
 
