@@ -92,13 +92,6 @@ in
   ];
 
   home.file = {
-    ".config/nvim".source = pkgs.fetchgit {
-      url = "https://github.com/AstroNvim/AstroNvim";
-      rev = "refs/tags/v3.40.3";
-      sha256 = "KKlT3GveONyjXUdkaBVwjWnu07Il7sUKeD3dOaLqPPw=";
-      leaveDotGit = true;
-    };
-
     ".config/wofi".source = pkgs.fetchgit {
       url = "https://github.com/s1n7ax/wofi-dracula-theme";
       rev = "4845865";
