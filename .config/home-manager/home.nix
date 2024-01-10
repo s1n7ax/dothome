@@ -82,6 +82,7 @@ in
     lua-language-server
     prettierd
     nixpkgs-fmt
+    marksman
 
     # taking screenshots
     grim
