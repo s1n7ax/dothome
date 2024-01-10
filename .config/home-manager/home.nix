@@ -89,6 +89,7 @@ in {
     nixfmt
     black
     isort
+    luajitPackages.luacheck
 
     # taking screenshots
     grim
