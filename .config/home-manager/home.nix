@@ -7,9 +7,7 @@ let
     sha256 = "1LeSKuZcuWr9z6mKnyt1ojFOnIiTupwspGrOw/ts8Yk=";
   };
 
-in
-
-{
+in {
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -83,6 +81,14 @@ in
     prettierd
     nixpkgs-fmt
     marksman
+    shfmt
+    python311Packages.mdformat
+    cbfmt
+    markdownlint-cli
+    markdownlint-cli2
+    nixfmt
+    black
+    isort
 
     # taking screenshots
     grim
@@ -192,17 +198,11 @@ in
           edit = "E";
         };
 
-        files = {
-          ignoreFile = "I";
-        };
+        files = { ignoreFile = "I"; };
 
-        branches = {
-          viewGitFlowOptions = "I";
-        };
+        branches = { viewGitFlowOptions = "I"; };
 
-        submodules = {
-          init = "I";
-        };
+        submodules = { init = "I"; };
       };
     };
   };
@@ -262,16 +262,12 @@ in
 
   programs.nnn = {
     enable = true;
-    package = pkgs.nnn.override {
-      withNerdIcons = true;
-    };
+    package = pkgs.nnn.override { withNerdIcons = true; };
   };
 
   programs.starship.enable = true;
 
-  programs.obs-studio = {
-    enable = true;
-  };
+  programs.obs-studio = { enable = true; };
 
   services.dunst = {
     enable = true;
@@ -287,35 +283,26 @@ in
       enable = true;
 
       associations.removed = {
-        "image/png" = [
-          "org.mozilla.firefox.desktop"
-          "com.microsoft.Edge.desktop"
-        ];
+        "image/png" =
+          [ "org.mozilla.firefox.desktop" "com.microsoft.Edge.desktop" ];
       };
-      defaultApplications =
-        let
-          image_viewers = [
-            "nsxiv.desktop"
-            "org.kde.gwenview.desktop"
-          ];
+      defaultApplications = let
+        image_viewers = [ "nsxiv.desktop" "org.kde.gwenview.desktop" ];
 
-          web_content = [
-            "org.mozilla.firefox.desktop"
-          ];
-        in
-        {
-          "image/png" = image_viewers;
-          "image/jpeg" = image_viewers;
-          "image/webp" = image_viewers;
-          "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-          "text/html" = web_content;
-          "text/xml" = web_content;
-          "application/xhtml+xml" = web_content;
-          "application/vnd.mozilla.xul+xml" = web_content;
-          "text/mml" = web_content;
-          "x-scheme-handler/http" = web_content;
-          "x-scheme-handler/https" = web_content;
-        };
+        web_content = [ "org.mozilla.firefox.desktop" ];
+      in {
+        "image/png" = image_viewers;
+        "image/jpeg" = image_viewers;
+        "image/webp" = image_viewers;
+        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        "text/html" = web_content;
+        "text/xml" = web_content;
+        "application/xhtml+xml" = web_content;
+        "application/vnd.mozilla.xul+xml" = web_content;
+        "text/mml" = web_content;
+        "x-scheme-handler/http" = web_content;
+        "x-scheme-handler/https" = web_content;
+      };
     };
   };
 
