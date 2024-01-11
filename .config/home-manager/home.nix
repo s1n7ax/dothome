@@ -90,6 +90,7 @@ in {
     black
     isort
     luajitPackages.luacheck
+    nil
 
     # taking screenshots
     grim
