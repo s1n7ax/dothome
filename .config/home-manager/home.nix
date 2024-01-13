@@ -45,6 +45,7 @@ in {
     wl-clipboard
     nodejs_20
     (python3.withPackages (py-packages: with py-packages; [ pip ]))
+    virtualenv
     vifm
     ffmpeg_6-full
     gphoto2 # camera connect
