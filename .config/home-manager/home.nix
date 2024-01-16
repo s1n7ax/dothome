@@ -72,6 +72,7 @@ in {
     firefox
     ungoogled-chromium
     neovide
+    direnv
 
     pkgs-my.davinci-resolve
     pkgs-my.devcontainer
@@ -161,6 +162,7 @@ in {
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
     # withNodeJs = true;
     # withPython3 = true;
   };

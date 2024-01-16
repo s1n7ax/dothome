@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ ... }: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -16,6 +15,7 @@
       stty -ixon
 
       bindkey "^s" forward-char
+      eval "$(direnv hook zsh)"
     '';
     shellAliases = {
       n = "nvim";
@@ -49,11 +49,12 @@
 
       # devcontainer
       dc = "devcontainer --workspace-folder .";
-      dcu = "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/astronvim,target=/root/.config/astronvim'";
-      dcr = "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/astronvim,target=/root/.config/astronvim' --remove-existing-container";
+      dcu =
+        "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/astronvim,target=/root/.config/astronvim'";
+      dcr =
+        "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/astronvim,target=/root/.config/astronvim' --remove-existing-container";
       dcn = "devcontainer exec --workspace-folder . nvim";
       dcs = "devcontainer exec --workspace-folder . bash";
-
 
       # edit
       nh = "run-command-at 'nvim' ~/.config/home-manager; ";
@@ -74,7 +75,8 @@
       cdn = "cd /etc/nixos";
 
       # home manager
-      hm = "cd ~/.config/home-manager && nix flake update && home-manager --impure switch --refresh";
+      hm =
+        "cd ~/.config/home-manager && nix flake update && home-manager --impure switch --refresh";
     };
   };
 }
