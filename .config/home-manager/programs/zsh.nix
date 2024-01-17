@@ -24,6 +24,7 @@
       ld = "lazydocker";
       yt = "yt-dlp";
       h = "Hyprland";
+      rm = "trash";
 
       # rust alternatives
       cat = "bat";

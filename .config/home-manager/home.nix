@@ -73,6 +73,7 @@ in {
     ungoogled-chromium
     neovide
     direnv
+    trash-cli
 
     pkgs-my.davinci-resolve
     pkgs-my.devcontainer
