@@ -72,7 +72,6 @@ in {
     firefox
     ungoogled-chromium
     neovide
-    direnv
     trash-cli
 
     pkgs-my.davinci-resolve
@@ -274,6 +273,12 @@ in {
   programs.starship.enable = true;
 
   programs.obs-studio = { enable = true; };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
 
   services.dunst = {
     enable = true;

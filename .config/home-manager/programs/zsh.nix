@@ -15,7 +15,6 @@
       stty -ixon
 
       bindkey "^s" forward-char
-      eval "$(direnv hook zsh)"
     '';
     shellAliases = {
       n = "nvim";
