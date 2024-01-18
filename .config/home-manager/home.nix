@@ -72,6 +72,7 @@ in {
     firefox
     ungoogled-chromium
     neovide
+    cosmic-term
     trash-cli
 
     pkgs-my.davinci-resolve
@@ -294,18 +295,22 @@ in {
       enable = true;
 
       associations.removed = {
-        "image/png" =
-          [ "org.mozilla.firefox.desktop" "com.microsoft.Edge.desktop" ];
+        "image/png" = [
+          "firefox.desktop"
+          "org.mozilla.firefox.desktop"
+          "com.microsoft.Edge.desktop"
+        ];
       };
       defaultApplications = let
         image_viewers = [ "nsxiv.desktop" "org.kde.gwenview.desktop" ];
-
-        web_content = [ "org.mozilla.firefox.desktop" ];
+        web_content = [ "firefox.desktop" "org.mozilla.firefox.desktop" ];
       in {
         "image/png" = image_viewers;
         "image/jpeg" = image_viewers;
         "image/webp" = image_viewers;
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+
+        # web content
         "text/html" = web_content;
         "text/xml" = web_content;
         "application/xhtml+xml" = web_content;
