@@ -50,9 +50,9 @@
       # devcontainer
       dc = "devcontainer --workspace-folder .";
       dcu =
-        "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/astronvim,target=/root/.config/astronvim'";
+        "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/nvim,target=/root/.config/nvim'";
       dcr =
-        "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/astronvim,target=/root/.config/astronvim' --remove-existing-container";
+        "devcontainer up --workspace-folder . --mount 'type=bind,source=/home/s1n7ax/.config/nvim,target=/root/.config/nvim' --remove-existing-container";
       dcn = "devcontainer exec --workspace-folder . nvim";
       dcs = "devcontainer exec --workspace-folder . bash";
 
