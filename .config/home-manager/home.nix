@@ -1,4 +1,4 @@
-{ pkgs, pkgs-my, ... }:
+{ pkgs, pkgs-my, pkgs-devenv, ... }:
 
 let
   dunstConf = pkgs.fetchgit {
@@ -37,7 +37,6 @@ in {
     ripgrep
     starship
     skim
-    # cargo
     zellij
 
     # other packages
@@ -74,6 +73,7 @@ in {
     neovide
     cosmic-term
     trash-cli
+    pkgs-devenv.devenv
 
     pkgs-my.davinci-resolve
     pkgs-my.devcontainer

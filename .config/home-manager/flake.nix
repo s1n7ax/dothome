@@ -9,24 +9,30 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-my = {
-      url = "github:s1n7ax/nix-flakes";
-    };
+    nixpkgs-my.url = "github:s1n7ax/nix-flakes";
+    devenv.url = "github:cachix/devenv";
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, nixpkgs-my, home-manager, ... }:
+  nixConfig = {
+    extra-trusted-public-keys =
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+    extra-substituters = "https://devenv.cachix.org";
+  };
+
+  outputs = { nixpkgs, nixpkgs-stable, nixpkgs-my, home-manager, devenv, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
       pkgs-my = nixpkgs-my.packages.${system};
-    in
-    {
+      pkgs-devenv = devenv.packages.${system};
+    in {
       homeConfigurations."s1n7ax" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit pkgs-my;
-          inherit pkgs-stable;
+          pkgs-devenv = pkgs-devenv;
+          pkgs-my = pkgs-my;
+          pkgs-stable = pkgs-stable;
         };
 
         # Specify your home configuration modules here, for example,
@@ -40,9 +46,6 @@
           ./programs/alacritty
           ./programs/nushell
         ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
     };
 }
