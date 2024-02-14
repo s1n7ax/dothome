@@ -40,6 +40,8 @@ in {
     zellij
 
     # other packages
+    xfce.thunar
+    xfce.tumbler
     pavucontrol
     wl-clipboard
     nodejs_20
@@ -62,9 +64,6 @@ in {
     sshfs
     nsxiv # image viewer
     appimage-run
-    rustup
-    cargo-leptos
-    cargo-generate
     sass
     jdk17
     gnumake
@@ -73,6 +72,13 @@ in {
     neovide
     cosmic-term
     trash-cli
+    yarn
+    cargo
+    cargo-leptos
+    cargo-generate
+    rust-analyzer
+    vscode-langservers-extracted
+
     pkgs-devenv.devenv
 
     pkgs-my.davinci-resolve
@@ -95,13 +101,19 @@ in {
     luajitPackages.luacheck
     nil
     astyle
+    typescript
+    taplo
+    yaml-language-server
+    hadolint
 
     # taking screenshots
     grim
     slurp
     xdg-utils
 
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    (nerdfonts.override {
+      fonts = [ "FiraCode" "JetBrainsMono" "CascadiaCode" ];
+    })
   ];
 
   home.file = {
