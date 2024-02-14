@@ -13,7 +13,7 @@ size = 14
 builtin_box_drawing = true
 
 [font.normal]
-family = "JetBrainsMonoNL NF"
+family = "CaskaydiaCove NFM"
 
 [colors]
 # name = "Ashes (dark)"
