@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   wayland.windowManager.hyprland = {
     package = pkgs.hyprland;
     enable = true;
@@ -21,13 +20,9 @@
         "float,class:(Tor Browser)"
       ];
       monitor = ",preferred,auto,auto";
-      exec-once = [
-        "swaybg -i .wallpaper/*"
-      ];
+      exec-once = [ "swaybg -i .wallpaper/*" ];
 
-      env = [
-        "XCURSOR_SIZE,35"
-      ];
+      env = [ "XCURSOR_SIZE,35" ];
 
       input = {
         kb_layout = "us";
@@ -36,15 +31,12 @@
         # kb_options =
         # kb_rules =
 
-
         repeat_delay = 190;
         repeat_rate = 200;
 
         follow_mouse = 1;
 
-        touchpad = {
-          natural_scroll = false;
-        };
+        touchpad = { natural_scroll = false; };
 
         sensitivity = -0.5;
         accel_profile = "flat";
@@ -69,8 +61,8 @@
 
         blur = {
           enabled = true;
-          size = 4;
-          passes = 2;
+          size = 5;
+          passes = 3;
         };
 
         drop_shadow = true;
@@ -119,7 +111,8 @@
         "$amod, S, exec, flatpak run org.kde.dolphin"
         "$amod, T, exec, flatpak run md.obsidian.Obsidian"
         "$amod, Z, exec, slurp | grim -g - - | wl-copy -t image/png"
-        ''$amod, X, exec, slurp | grim -t png -g - ~/Pictures/"$(date +'screenshot %y-%m-%d %H:%M:%S').png"''
+        ''
+          $amod, X, exec, slurp | grim -t png -g - ~/Pictures/"$(date +'screenshot %y-%m-%d %H:%M:%S').png"''
 
         "$amod, O, exec, poweroff"
 
@@ -179,10 +172,7 @@
         "$mod, mouse_up, workspace, e-1"
       ];
 
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-      ];
+      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
     };
   };
 }

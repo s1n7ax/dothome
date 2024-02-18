@@ -15,6 +15,8 @@
       stty -ixon
 
       bindkey "^s" forward-char
+      bindkey "^a" beginning-of-line
+      bindkey "^r" end-of-line
     '';
     shellAliases = {
       n = "nvim";
@@ -51,18 +53,14 @@
       dc = "devcontainer --workspace-folder .";
       dcu = ''
         devcontainer up \
-          --workspace-folder . \
+          --workspace-folder .
           --mount 'type=bind,source=/home/s1n7ax/.config/nvim,target=/root/.config/nvim' \
-          --mount 'type=bind,source=/home/s1n7ax/.local/share/nvim/lazy,target=/root/.local/share/nvim/lazy' \
-          --mount 'type=bind,source=/home/s1n7ax/.local/share/nvim/mason/,target=/root/.local/share/nvim/mason'
       '';
 
       dcr = ''
         devcontainer up \
           --workspace-folder . \
           --mount 'type=bind,source=/home/s1n7ax/.config/nvim,target=/root/.config/nvim' \
-          --mount 'type=bind,source=/home/s1n7ax/.local/share/nvim/lazy,target=/root/.local/share/nvim/lazy' \
-          --mount 'type=bind,source=/home/s1n7ax/.local/share/nvim/mason/,target=/root/.local/share/nvim/mason' \
           --remove-existing-container
       '';
       dcn = "devcontainer exec --workspace-folder . nvim";
