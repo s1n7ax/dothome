@@ -47,7 +47,7 @@ in {
 
     # dev packages
     ++ c ++ container ++ java ++ javascript ++ lua ++ markdown ++ nix ++ python
-    ++ rust ++ sh ++ toml ++ yaml ++ database
+    ++ rust ++ sh ++ toml ++ yaml ++ database ++ env
 
     # other packaegs
     ++ camera ++ screen-capture ++ fonts ++ rust-alternatives ++ utility
