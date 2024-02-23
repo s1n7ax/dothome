@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ settings, overlays, ... }:
 let
   package-settings = {
     dev = {
@@ -31,6 +31,8 @@ in {
       inherit settings package-settings;
     })
   ];
+
+  nixpkgs.overlays = overlays;
 
   home.username = settings.username;
   home.homeDirectory = "/home/${settings.username}";

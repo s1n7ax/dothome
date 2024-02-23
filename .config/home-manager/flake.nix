@@ -1,13 +1,19 @@
 {
   description = "Home Manager configuration of s1n7ax";
 
-  outputs = { nixpkgs, nixpkgs-stable, nixpkgs-my, home-manager, devenv, ... }:
+  outputs =
+    { nixpkgs, nixpkgs-stable, nixpkgs-my, home-manager, devenv, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
       pkgs-my = nixpkgs-my.packages.${system};
       pkgs-devenv = devenv.packages.${system};
+
+      #--------------------------------------------------------------------#
+      #                              OVERLAYS                              #
+      #--------------------------------------------------------------------#
+      overlays = [ inputs.neovim-nightly-overlay.overlay ];
 
       #--------------------------------------------------------------------#
       #                              SETTINGS                              #
@@ -27,7 +33,7 @@
         ];
 
         extraSpecialArgs = {
-          inherit pkgs-devenv pkgs-my pkgs-stable settings;
+          inherit pkgs-devenv pkgs-my pkgs-stable settings overlays;
         };
       };
     };
@@ -42,5 +48,6 @@
     };
     nixpkgs-my.url = "github:s1n7ax/nix-flakes";
     devenv.url = "github:cachix/devenv";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 }
