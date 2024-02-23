@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    nodejs_20
-    yarn
+    nodejs_21
     nodePackages.pnpm
     sass
     vscode-langservers-extracted
+    tailwindcss-language-server
     prettierd
     typescript
   ];

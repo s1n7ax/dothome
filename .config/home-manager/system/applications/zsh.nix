@@ -26,6 +26,7 @@
       yt = "yt-dlp";
       h = "Hyprland";
       rm = "trash";
+      npm = "pnpm";
 
       # rust alternatives
       cat = "bat";
