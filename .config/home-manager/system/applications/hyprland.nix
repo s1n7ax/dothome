@@ -6,6 +6,7 @@
     xwayland.enable = true;
 
     settings = {
+      xwayland = { force_zero_scaling = true; };
 
       windowrulev2 = [
         "workspace 1,class:(org.kde.digikam)"
@@ -19,10 +20,10 @@
         "float,class:(steam),title:(Friends List)"
         "float,class:(Tor Browser)"
       ];
-      monitor = ",preferred,auto,auto";
+      monitor = ",highres,auto,1";
       exec-once = [ "swaybg -i .wallpaper/*" ];
 
-      env = [ "XCURSOR_SIZE,35" ];
+      env = [ "XCURSOR_SIZE,35" "GDK_SCALE,2" ];
 
       input = {
         kb_layout = "us";
