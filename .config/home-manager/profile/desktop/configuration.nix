@@ -15,6 +15,7 @@ let
       toml = true;
       yaml = true;
       database = false;
+      env = true;
     };
 
     camera = true;
