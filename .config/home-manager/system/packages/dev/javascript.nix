@@ -3,6 +3,7 @@
     nodejs_21
     nodePackages.pnpm
     sass
+    emmet-language-server
     vscode-langservers-extracted
     tailwindcss-language-server
     prettierd
