@@ -8,5 +8,6 @@
     tailwindcss-language-server
     prettierd
     typescript
+    nodePackages.typescript-language-server
   ];
 }
