@@ -9,7 +9,7 @@ x = 15
 y = 0
 
 [font]
-size = 14
+size = 18
 builtin_box_drawing = true
 
 [font.normal]
