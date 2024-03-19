@@ -1,7 +1,7 @@
 { ... }: {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     sessionVariables = {
       WLR_NO_HARDWARE_CURSORS = "1"; # no cursor fix for wayland
