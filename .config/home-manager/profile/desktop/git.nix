@@ -19,6 +19,7 @@
       };
       init = { defaultBranch = "main"; };
       pull = { rebase = true; };
+      push = { autoSetupRemote = true; };
       safe = { directory = [ "/etc/nixos" ]; };
       maintainance = {
         auto = false;
