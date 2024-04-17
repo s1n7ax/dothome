@@ -3,7 +3,7 @@
   home.packages = with pkgs;
     [
       (nerdfonts.override {
-        fonts = [ "FiraCode" "JetBrainsMono" "CascadiaCode" ];
+        fonts = [ "FiraCode" "JetBrainsMono" "CascadiaCode" "CodeNewRoman" ];
       })
     ];
 }
