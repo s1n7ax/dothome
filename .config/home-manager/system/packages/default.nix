@@ -28,6 +28,7 @@ let
   toml = get-dev-pkg "toml";
   yaml = get-dev-pkg "yaml";
   database = get-dev-pkg "database";
+  web = get-dev-pkg "web";
 
 in {
 
@@ -47,7 +48,7 @@ in {
 
     # dev packages
     ++ c ++ container ++ java ++ javascript ++ lua ++ markdown ++ nix ++ python
-    ++ rust ++ sh ++ toml ++ yaml ++ database ++ env
+    ++ rust ++ sh ++ toml ++ yaml ++ database ++ env ++ web
 
     # other packaegs
     ++ camera ++ screen-capture ++ fonts ++ rust-alternatives ++ utility

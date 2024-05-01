@@ -16,6 +16,7 @@ let
       yaml = true;
       database = true;
       env = true;
+      web = true;
     };
 
     camera = false;
