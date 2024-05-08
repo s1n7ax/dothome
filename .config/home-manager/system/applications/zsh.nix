@@ -67,6 +67,11 @@
       dcn = "devcontainer exec --workspace-folder . nvim";
       dcs = "devcontainer exec --workspace-folder . bash";
 
+      # docker compose
+      dd = "docker compose";
+      ddu = "docker compose up";
+      ddd = "docker compose up";
+
       # edit
       nh = "run-command-at 'nvim' ~/.config/home-manager; ";
       nn = "run-command-at 'nvim' ~/.config/nvim;";

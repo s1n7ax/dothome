@@ -3,6 +3,6 @@
 
     nixpkgs-fmt
     nil
-    nixfmt
+    nixfmt-rfc-style
   ];
 }
