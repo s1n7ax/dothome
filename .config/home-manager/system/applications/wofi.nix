@@ -15,7 +15,6 @@
       print_command = true;
       layer = "overlay";
       allow_images = true;
-      sort_order = "alphabetical";
       gtk_dark = true;
       prompt = "";
       image_size = 20;
@@ -32,7 +31,7 @@
       }
 
       #window {
-        background: rgba(41, 46, 66, 0.5);
+        background: rgba(41, 46, 66, 0.9);
         margin: auto;
         padding: 10px;
         border-radius: 20px;
