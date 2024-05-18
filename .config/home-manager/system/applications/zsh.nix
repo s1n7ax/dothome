@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -7,6 +8,9 @@
       WLR_NO_HARDWARE_CURSORS = "1"; # no cursor fix for wayland
       EDITOR = "nvim";
       TERM = "alacritty";
+    };
+    localVariables = {
+      PATH = "/home/s1n7ax/.cargo/bin:$PATH";
     };
 
     syntaxHighlighting.enable = true;
@@ -91,8 +95,7 @@
       cdn = "cd /etc/nixos";
 
       # home manager
-      hm =
-        "cd ~/.config/home-manager && nix flake update && home-manager --impure switch --refresh";
+      hm = "cd ~/.config/home-manager && nix flake update && home-manager --impure switch --refresh";
     };
   };
 }
