@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     nodejs_22
     nodePackages.pnpm
-    sass
     emmet-language-server
     vscode-langservers-extracted
     tailwindcss-language-server
