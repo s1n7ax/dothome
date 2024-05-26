@@ -20,7 +20,7 @@
       #--------------------------------------------------------------------#
       #                              OVERLAYS                              #
       #--------------------------------------------------------------------#
-      # overlays = [ inputs.neovim-nightly-overlay.overlay ];
+      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
 
       #--------------------------------------------------------------------#
       #                              SETTINGS                              #
@@ -44,7 +44,7 @@
             pkgs-my
             pkgs-stable
             settings
-            # overlays
+            overlays
             ;
         };
       };
@@ -60,6 +60,6 @@
     };
     nixpkgs-my.url = "github:s1n7ax/nix-flakes";
     devenv.url = "github:cachix/devenv";
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 }

@@ -34,7 +34,7 @@ in
     (import ../../system/packages/default.nix { inherit settings package-settings; })
   ];
 
-  # nixpkgs.overlays = overlays;
+  nixpkgs.overlays = overlays;
 
   home.username = settings.username;
   home.homeDirectory = "/home/${settings.username}";
