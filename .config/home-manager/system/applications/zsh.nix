@@ -74,7 +74,7 @@
       # docker compose
       dd = "docker compose";
       ddu = "docker compose up";
-      ddd = "docker compose up";
+      ddd = "docker compose down";
 
       # edit
       nh = "run-command-at 'nvim' ~/.config/home-manager; ";
@@ -96,6 +96,9 @@
 
       # home manager
       hm = "cd ~/.config/home-manager && nix flake update && home-manager --impure switch --refresh";
+
+      # nixos
+      nixos = "cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .";
     };
   };
 }
