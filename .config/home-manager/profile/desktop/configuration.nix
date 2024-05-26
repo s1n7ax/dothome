@@ -1,4 +1,5 @@
 { settings, overlays, ... }:
+# { settings, overlays, ... }:
 let
   package-settings = {
     dev = {
@@ -26,16 +27,14 @@ let
     utility = true;
     terminal = true;
   };
-
-in {
+in
+{
   imports = [
     ./git.nix
-    (import ../../system/packages/default.nix {
-      inherit settings package-settings;
-    })
+    (import ../../system/packages/default.nix { inherit settings package-settings; })
   ];
 
-  nixpkgs.overlays = overlays;
+  # nixpkgs.overlays = overlays;
 
   home.username = settings.username;
   home.homeDirectory = "/home/${settings.username}";
