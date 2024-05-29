@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ../applications/dunst.nix
     ../applications/home-manager.nix
     ../applications/vifm.nix
-    ../applications/wofi.nix
+    ../applications/fuzzel.nix
     ../applications/xdg.nix
     ../applications/zathura.nix
     ../applications/neovim.nix
@@ -52,6 +53,5 @@
     trash-cli
     appimage-run
     xdg-utils
-
   ];
 }

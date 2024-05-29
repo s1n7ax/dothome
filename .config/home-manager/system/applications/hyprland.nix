@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   wayland.windowManager.hyprland = {
     package = pkgs.hyprland;
     enable = true;
@@ -6,7 +7,9 @@
     xwayland.enable = true;
 
     settings = {
-      xwayland = { force_zero_scaling = true; };
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
       windowrulev2 = [
         "workspace 1,class:(org.kde.digikam)"
@@ -23,7 +26,10 @@
       monitor = ",highres,auto,1";
       exec-once = [ "swaybg -i .wallpaper/*" ];
 
-      env = [ "XCURSOR_SIZE,35" "GDK_SCALE,2" ];
+      env = [
+        "XCURSOR_SIZE,35"
+        "GDK_SCALE,2"
+      ];
 
       input = {
         kb_layout = "us";
@@ -37,7 +43,9 @@
 
         follow_mouse = 1;
 
-        touchpad = { natural_scroll = false; };
+        touchpad = {
+          natural_scroll = false;
+        };
 
         sensitivity = -0.5;
         accel_profile = "flat";
@@ -105,15 +113,14 @@
 
       bind = [
         # run some applications
-        "$mod, P, exec, wofiw"
+        "$mod, P, exec, fuzzel"
 
         "$amod, A, exec, flatpak run org.mozilla.firefox"
         "$amod, R, exec, alacritty -e vifm"
         "$amod, S, exec, flatpak run org.kde.dolphin"
         "$amod, T, exec, flatpak run md.obsidian.Obsidian"
         "$amod, Z, exec, slurp | grim -g - - | wl-copy -t image/png"
-        ''
-          $amod, X, exec, slurp | grim -t png -g - ~/Pictures/"$(date +'screenshot %y-%m-%d %H:%M:%S').png"''
+        ''$amod, X, exec, slurp | grim -t png -g - ~/Pictures/"$(date +'screenshot %y-%m-%d %H:%M:%S').png"''
 
         "$amod, O, exec, poweroff"
 
@@ -173,7 +180,10 @@
         "$mod, mouse_up, workspace, e-1"
       ];
 
-      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
     };
   };
 }
