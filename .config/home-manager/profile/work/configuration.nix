@@ -26,15 +26,13 @@ let
     utility = true;
     terminal = true;
   };
-
-in {
+in
+{
   imports = [
     ./git.nix
     ./office-packages.nix
 
-    (import ../../system/packages/default.nix {
-      inherit settings package-settings;
-    })
+    (import ../../system/packages/default.nix { inherit settings package-settings; })
   ];
 
   home.username = settings.username;

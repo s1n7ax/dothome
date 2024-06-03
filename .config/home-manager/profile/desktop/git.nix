@@ -1,4 +1,5 @@
-{ settings, ... }: {
+{ settings, ... }:
+{
   programs.git = {
     enable = true;
     difftastic = {
@@ -17,10 +18,18 @@
         untrackedcache = true;
         fsmonitor = true;
       };
-      init = { defaultBranch = "main"; };
-      pull = { rebase = true; };
-      push = { autoSetupRemote = true; };
-      safe = { directory = [ "/etc/nixos" ]; };
+      init = {
+        defaultBranch = "main";
+      };
+      pull = {
+        rebase = true;
+      };
+      push = {
+        autoSetupRemote = true;
+      };
+      safe = {
+        directory = [ "/etc/nixos" ];
+      };
       maintainance = {
         auto = false;
         strategy = "incremental";

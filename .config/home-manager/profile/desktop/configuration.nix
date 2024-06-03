@@ -1,5 +1,4 @@
 { settings, overlays, ... }:
-# { settings, overlays, ... }:
 let
   package-settings = {
     dev = {

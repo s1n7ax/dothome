@@ -10,6 +10,7 @@
     ../applications/neovim.nix
     ../applications/font.nix
   ];
+
   home.packages = with pkgs; [
 
     # file managers

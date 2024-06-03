@@ -1,7 +1,4 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs;
-    [
-
-      gphoto2
-    ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ gphoto2 ];
 }

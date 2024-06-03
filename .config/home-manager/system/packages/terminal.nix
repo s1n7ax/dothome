@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ../applications/alacritty
     ../applications/lazygit.nix
