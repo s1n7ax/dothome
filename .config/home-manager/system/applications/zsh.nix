@@ -98,7 +98,7 @@
       hm = "cd ~/.config/home-manager && nix flake update && home-manager --impure switch --refresh";
 
       # nixos
-      nixos = "cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .";
+      nixos = "cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --upgrade --flake .";
     };
   };
 }
