@@ -10,5 +10,6 @@
         "CodeNewRoman"
       ];
     })
+    maple-mono-NF
   ];
 }
