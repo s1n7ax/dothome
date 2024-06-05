@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../applications/alacritty
@@ -8,4 +8,6 @@
     ../applications/zoxide.nix
     ../applications/zsh.nix
   ];
+
+  home.packages = with pkgs; [ cosmic-term ];
 }
