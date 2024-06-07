@@ -9,5 +9,8 @@
     ../applications/zsh.nix
   ];
 
-  home.packages = with pkgs; [ cosmic-term ];
+  home.packages = with pkgs; [
+    cosmic-term
+    kitty
+  ];
 }
