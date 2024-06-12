@@ -2,8 +2,7 @@
 let
   get-pkg = name: if package-settings.${name} then [ ./${name}.nix ] else [ ];
 
-  get-dev-pkg = name:
-    if package-settings.dev.${name} then [ ./dev/${name}.nix ] else [ ];
+  get-dev-pkg = name: if package-settings.dev.${name} then [ ./dev/${name}.nix ] else [ ];
 
   # other packaegs
   camera = get-pkg "camera";
@@ -12,6 +11,7 @@ let
   rust-alternatives = get-pkg "rust-alternatives";
   utility = get-pkg "utility";
   terminal = get-pkg "terminal";
+  players = get-pkg "players";
 
   # dev packages
   env = get-dev-pkg "env";
@@ -29,28 +29,43 @@ let
   yaml = get-dev-pkg "yaml";
   database = get-dev-pkg "database";
   web = get-dev-pkg "web";
+in
+{
 
-in {
-
-  imports = [
-    ../applications/mpv.nix
-    # ../applications/systemd.nix
-  ]
-  # shell
-    ++ [
-      ../applications/${settings.shell}.nix
+  imports =
+    [
+      ../applications/mpv.nix
+      # ../applications/systemd.nix
     ]
+    # shell
+    ++ [ ../applications/${settings.shell}.nix ]
 
     # wm
-    ++ [
-      ../applications/${settings.wm}.nix
-    ]
+    ++ [ ../applications/${settings.wm}.nix ]
 
     # dev packages
-    ++ c ++ container ++ java ++ javascript ++ lua ++ markdown ++ nix ++ python
-    ++ rust ++ sh ++ toml ++ yaml ++ database ++ env ++ web
+    ++ c
+    ++ container
+    ++ java
+    ++ javascript
+    ++ lua
+    ++ markdown
+    ++ nix
+    ++ python
+    ++ rust
+    ++ sh
+    ++ toml
+    ++ yaml
+    ++ database
+    ++ env
+    ++ web
 
     # other packaegs
-    ++ camera ++ screen-capture ++ fonts ++ rust-alternatives ++ utility
-    ++ terminal;
+    ++ camera
+    ++ screen-capture
+    ++ fonts
+    ++ rust-alternatives
+    ++ utility
+    ++ terminal
+    ++ players;
 }

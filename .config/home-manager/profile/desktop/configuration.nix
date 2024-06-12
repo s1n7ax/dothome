@@ -25,6 +25,7 @@ let
     rust-alternatives = true;
     utility = true;
     terminal = true;
+    players = true;
   };
 in
 {
