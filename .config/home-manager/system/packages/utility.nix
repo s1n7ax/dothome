@@ -24,7 +24,6 @@
 
     # browsers
     firefox
-    ungoogled-chromium
 
     #bluetooth
     blueman
@@ -45,9 +44,6 @@
     ffmpeg_6-full
     nsxiv
     libsForQt5.gwenview
-
-    # window manager
-    bemenu
 
     # other
     wl-clipboard
