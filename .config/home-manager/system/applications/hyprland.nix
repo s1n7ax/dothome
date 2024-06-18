@@ -23,7 +23,7 @@
         "float,class:(steam),title:(Friends List)"
         "float,class:(Tor Browser)"
       ];
-      monitor = ",highres,auto,1";
+      monitor = ",preferred,auto,1";
       exec-once = [ "swaybg -i .wallpaper/*" ];
 
       env = [
