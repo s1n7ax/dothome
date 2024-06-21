@@ -1,6 +1,18 @@
 {
   description = "Home Manager configuration of s1n7ax";
 
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs-my.url = "github:s1n7ax/nix-flakes";
+    devenv.url = "github:cachix/devenv";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+  };
+
   outputs =
     {
       nixpkgs,
@@ -33,10 +45,13 @@
       };
     in
     {
-      homeConfigurations."s1n7ax" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${settings.username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ (./. + "/profile" + ("/" + settings.profile) + "/configuration.nix") ];
+        modules = [
+          { nixpkgs.overlays = overlays; }
+          (./. + "/profile" + ("/" + settings.profile) + "/configuration.nix")
+        ];
 
         extraSpecialArgs = {
           inherit
@@ -49,17 +64,4 @@
         };
       };
     };
-
-  inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixpkgs-my.url = "github:s1n7ax/nix-flakes";
-    devenv.url = "github:cachix/devenv";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-  };
 }

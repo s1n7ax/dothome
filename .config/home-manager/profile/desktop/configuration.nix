@@ -38,5 +38,5 @@ in
 
   home.username = settings.username;
   home.homeDirectory = "/home/${settings.username}";
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.05";
 }
