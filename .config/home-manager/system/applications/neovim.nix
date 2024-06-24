@@ -7,5 +7,5 @@
     viAlias = true;
     vimAlias = true;
   };
-  home.packages = with pkgs; [ tree-sitter ];
+  home.packages = with pkgs; [ luajitPackages.luarocks ];
 }
