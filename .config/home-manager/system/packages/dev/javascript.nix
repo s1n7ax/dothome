@@ -9,6 +9,7 @@
     tailwindcss-language-server
     prettierd
     typescript
+    eslint_d
     nodePackages.typescript-language-server
   ];
 }
