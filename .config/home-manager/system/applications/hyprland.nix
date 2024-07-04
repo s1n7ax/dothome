@@ -72,6 +72,7 @@
           enabled = true;
           size = 5;
           passes = 3;
+          vibrancy = 0.5;
         };
 
         drop_shadow = true;
@@ -99,7 +100,7 @@
 
       master = {
         # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-        new_is_master = false;
+        new_status = "slave";
       };
 
       gestures = {
