@@ -1,7 +1,4 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs;
-    [
-
-      jdk17
-    ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ jdk17 ];
 }

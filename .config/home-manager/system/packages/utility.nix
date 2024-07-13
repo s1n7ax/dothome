@@ -24,6 +24,7 @@
 
     # browsers
     firefox
+    ladybird
 
     #bluetooth
     blueman
