@@ -24,6 +24,7 @@
     '';
     shellAliases = {
       n = "nvim";
+      nv = "neovide";
       f = "vifm";
       lg = "lazygit";
       ld = "lazydocker";

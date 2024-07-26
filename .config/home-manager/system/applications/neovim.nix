@@ -7,7 +7,10 @@
     viAlias = true;
     vimAlias = true;
   };
-  home.packages = with pkgs; [ luajitPackages.luarocks ];
+  home.packages = with pkgs; [
+    neovide
+    luajitPackages.luarocks
+  ];
   home.file.".config/nvim/.luarc.json".text = ''
     {
       "workspace.library": [
