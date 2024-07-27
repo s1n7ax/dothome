@@ -1,4 +1,7 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ dbeaver-bin ];
+  home.packages = with pkgs; [
+    postgresql
+    sqlite
+  ];
 }

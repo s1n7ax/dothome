@@ -14,7 +14,7 @@ let
       sh = true;
       toml = true;
       yaml = true;
-      database = false;
+      database = true;
       env = true;
       web = true;
     };
