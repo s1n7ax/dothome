@@ -8,7 +8,6 @@
     ../applications/xdg.nix
     ../applications/zathura.nix
     ../applications/neovim.nix
-    ../applications/font.nix
   ];
 
   home.packages = with pkgs; [
