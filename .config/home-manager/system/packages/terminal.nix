@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ../applications/kitty.nix
     ../applications/alacritty
     ../applications/lazygit.nix
     ../applications/scripts.nix

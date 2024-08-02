@@ -127,7 +127,7 @@
 
         "$smod, Q, exit,"
 
-        "$mod, Return, exec, alacritty"
+        "$mod, Return, exec, kitty"
 
         # window layouts
         "$mod, H, togglefloating,"
