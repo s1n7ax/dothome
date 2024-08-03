@@ -17,6 +17,7 @@ let
       database = true;
       env = true;
       web = true;
+      ide = true;
     };
 
     camera = true;

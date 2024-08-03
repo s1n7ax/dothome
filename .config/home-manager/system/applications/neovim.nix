@@ -2,7 +2,7 @@
 {
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim;
+    # package = pkgs.neovim;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -22,6 +22,7 @@
         "/home/s1n7ax/Workspace/nvim-java-dap/lua",
         "/home/s1n7ax/Workspace/nvim-java-test/lua",
         "/home/s1n7ax/Workspace/nvim-java-refactor/lua",
+        "/home/s1n7ax/Workspace/neotest-jdtls/lua",
         "/home/s1n7ax/Workspace/nvim-java/lua",
         "/home/s1n7ax/Workspace/nvim-snips/lua",
         "/home/s1n7ax/Workspace/nvim-window-picker/lua",

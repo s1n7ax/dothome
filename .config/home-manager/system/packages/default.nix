@@ -29,6 +29,7 @@ let
   yaml = get-dev-pkg "yaml";
   database = get-dev-pkg "database";
   web = get-dev-pkg "web";
+  ide = get-dev-pkg "ide";
 in
 {
 
@@ -59,6 +60,7 @@ in
     ++ database
     ++ env
     ++ web
+    ++ ide
 
     # other packaegs
     ++ camera
