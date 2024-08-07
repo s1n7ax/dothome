@@ -151,40 +151,60 @@
 
       set -euxo pipefail
 
-      if [[ $# -eq 0 ]] ; then
-      	echo 'Path to share should be passed'
-      	exit 1
+      if [[ $# -eq 0 ]]; then
+        echo 'Path to share should be passed'
+        exit 1
       fi
 
+      echo "Path is $1"
+
       function find_files {
-      	if [ -d "$1" ]; then
-      		find $1 -type f
-      	else
-      		echo $1
-      	fi
+        if [ -d "$1" ]; then
+          find $1 -type f
+        else
+          echo $1
+        fi
       }
 
-      AVAILABLE=$(kdeconnect-cli --list-available --name-only)
-      DEVICE_COUNT=$(echo "$AVAILABLE" | wc -l)
+      function get_device_names {
+        echo "$(kdeconnect-cli --list-available --name-only)"
+      }
+
+      function get_device_count {
+        echo "$(get_device_names)" | wc -l
+      }
 
       # when the computer boots for the first time, device cannot connect.
       # I think this is due to the daemon not running
       # so following will make sure daemon is running
-      if [ $DEVICE_COUNT -eq 0 ]; then
-        kdeconnect-cli --refresh;
+      count=5
+
+      for i in $(seq $count); do
+        echo "Looking for devices..."
+
+        if [ $(get_device_count) -gt 0 ]; then
+          break
+        fi
+
+        kdeconnect-cli --refresh
 
         # just waiting for few seconds so devices got time to connect to host
         sleep 2
+      done
+
+      if [ $(get_device_count) -eq 0 ]; then
+        echo "Could not find a device to send files"
+        exit 1
       fi
 
-      if [ $DEVICE_COUNT -gt 1 ]; then
-      	PICKED_DEVICE=$(echo "$AVAILABLE" | wofi --dmenu)
+      if [ $(get_device_count) -gt 1 ]; then
+        PICKED_DEVICE=$(echo "$(get_device_names)" | wofi --dmenu)
       else
-      	PICKED_DEVICE=$AVAILABLE
+        PICKED_DEVICE="$(get_device_names)"
       fi
 
       for path in "$@"; do
-      	find_files "$path" | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
+        find_files "$path" | xargs -I{} kdeconnect-cli --name="$PICKED_DEVICE" --share="{}"
       done
     '')
 
