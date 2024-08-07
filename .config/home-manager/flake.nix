@@ -32,7 +32,7 @@
       #--------------------------------------------------------------------#
       #                              OVERLAYS                              #
       #--------------------------------------------------------------------#
-      # overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
 
       #--------------------------------------------------------------------#
       #                              SETTINGS                              #
@@ -49,7 +49,7 @@
         inherit pkgs;
 
         modules = [
-          # { nixpkgs.overlays = overlays; }
+          { nixpkgs.overlays = overlays; }
           (./. + "/profile" + ("/" + settings.profile) + "/configuration.nix")
         ];
 
