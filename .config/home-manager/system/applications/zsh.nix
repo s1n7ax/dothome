@@ -4,6 +4,7 @@
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
+    oh-my-zsh.enable = true;
     sessionVariables = {
       WLR_NO_HARDWARE_CURSORS = "1"; # no cursor fix for wayland
       EDITOR = "nvim";
@@ -40,7 +41,6 @@
       ll = "eza -lg";
       find = "fd";
       grep = "rg";
-      fzf = "sk";
 
       # git
       g = "git";

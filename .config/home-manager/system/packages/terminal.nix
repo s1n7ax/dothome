@@ -8,5 +8,6 @@
     ../applications/starship.nix
     ../applications/zoxide.nix
     ../applications/zsh.nix
+    ../applications/fzf.nix
   ];
 }

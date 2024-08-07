@@ -9,7 +9,6 @@
     sd
     ripgrep
     starship
-    skim
     zellij
   ];
 }
