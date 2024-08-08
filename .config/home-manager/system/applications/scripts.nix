@@ -43,8 +43,9 @@
     # converts all the possible video files in the current directory to a codec
     # that is supported by davinci resolve editor
     (writeShellScriptBin "davincify" ''
+      set -euxo pipefail
+
       if [[ $# -eq 0 ]] ; then
-        mkdir -p converted
 
         vid_files=$(fd \
           --absolute-path \
@@ -53,6 +54,13 @@
           --exact-depth 1 \
           '.*.mov|.*.avi|.*.mkv' \
           .)
+
+        if [[ $(echo $vid_files | wc -l) -lt 1 ]]; then
+          echo "No files found of type mov, avi or mkv to encode"
+          exit 1
+        fi
+
+        mkdir -p converted
 
         IFS=$'\n'
         for line in $vid_files
