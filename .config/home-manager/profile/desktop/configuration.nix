@@ -27,6 +27,7 @@ let
     utility = true;
     terminal = true;
     players = true;
+    multi-media = true;
   };
 in
 {

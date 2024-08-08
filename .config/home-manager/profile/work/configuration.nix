@@ -18,6 +18,7 @@ let
       env = true;
       web = true;
       ide = false;
+      multi-media = false;
     };
 
     camera = false;

@@ -12,6 +12,7 @@ let
   utility = get-pkg "utility";
   terminal = get-pkg "terminal";
   players = get-pkg "players";
+  multi-media = get-pkg "multi-media";
 
   # dev packages
   env = get-dev-pkg "env";
@@ -69,5 +70,6 @@ in
     ++ rust-alternatives
     ++ utility
     ++ terminal
-    ++ players;
+    ++ players
+    ++ multi-media;
 }
