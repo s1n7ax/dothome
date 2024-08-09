@@ -151,8 +151,6 @@
     '')
 
     (writeShellScriptBin "kc-share" ''
-      #!/bin/env bash
-
       set -euxo pipefail
 
       if [[ $# -eq 0 ]]; then
@@ -160,13 +158,13 @@
         exit 1
       fi
 
-      echo "Path is $1"
+      SHARE_PATH=$(echo "$1" | sed 's/\\ / /g')
 
       function find_files {
-        if [ -d "$1" ]; then
-          find $1 -type f
+        if [ -d "$SHARE_PATH" ]; then
+          find "$SHARE_PATH" -type f
         else
-          echo $1
+          echo "$SHARE_PATH"
         fi
       }
 
