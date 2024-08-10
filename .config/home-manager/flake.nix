@@ -45,22 +45,41 @@
       };
     in
     {
-      homeConfigurations.${settings.username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = {
+        desktop = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-        modules = [
-          { nixpkgs.overlays = overlays; }
-          (./. + "/profile" + ("/" + settings.profile) + "/configuration.nix")
-        ];
+          modules = [
+            { nixpkgs.overlays = overlays; }
+            ./profile/desktop/configuration.nix
+          ];
 
-        extraSpecialArgs = {
-          inherit
-            pkgs-devenv
-            pkgs-my
-            pkgs-stable
-            settings
-            # overlays
-            ;
+          extraSpecialArgs = {
+            inherit
+              pkgs-devenv
+              pkgs-my
+              pkgs-stable
+              settings
+              ;
+          };
+        };
+
+        work = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            { nixpkgs.overlays = overlays; }
+            ./profile/work/configuration.nix
+          ];
+
+          extraSpecialArgs = {
+            inherit
+              pkgs-devenv
+              pkgs-my
+              pkgs-stable
+              settings
+              ;
+          };
         };
       };
     };
